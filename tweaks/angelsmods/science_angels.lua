@@ -184,7 +184,7 @@ if mods["angelsbioprocessing"] then
 			name = "sct-bio-sample-filling",
 			subgroup = "sct-bio-science-pack",
 			order = "d_a[bio]-d[filling]",
-			category = "crafting-with-fluid",
+			category = "liquifying",
 			expensive =
 			{
 				enabled = false,
@@ -248,7 +248,7 @@ if mods["angelsbioprocessing"] then
 			{
 				"gardens",
 				"bio-paper-1",
-				"bio-farm",
+				"bio-farm-1",
 			},
 			unit =
 			{

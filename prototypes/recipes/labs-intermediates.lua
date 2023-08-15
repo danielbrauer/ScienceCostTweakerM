@@ -94,7 +94,7 @@ data:extend({
 			ingredients = 
 			{
 				{"fast-inserter", 5},
-				{"electronic-circuit", 30},
+				{"splitter", 2},
 			},
 			result = "sct-lab2-automatization",
 		},
@@ -105,7 +105,7 @@ data:extend({
 			ingredients = 
 			{
 				{"fast-inserter", 2},
-				{"electronic-circuit", 10},
+				{"splitter", 1},
 			},
 			result = "sct-lab2-automatization",
 		},
@@ -148,7 +148,7 @@ data:extend({
 			enabled = false,
 			ingredients = 
 			{
-				{"advanced-circuit", 50},
+				{"sct-t3-sulfur-lightsource", 10},
 				{"sct-t3-femto-lasers", 2}
 			},
 			result = "sct-lab3-optics",
@@ -159,7 +159,7 @@ data:extend({
 			enabled = false,
 			ingredients = 
 			{
-				{"advanced-circuit", 20},
+				{"sct-t3-sulfur-lightsource", 3},
 				{"sct-t3-femto-lasers", 1}
 			},
 			result = "sct-lab3-optics",

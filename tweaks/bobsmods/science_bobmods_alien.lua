@@ -1,4 +1,4 @@
-if mods["bobenemies"] and settings.startup["bobmods-enemies-enablenewartifacts"] and settings.startup["bobmods-enemies-enablenewartifacts"].value and settings.startup["bobmods-enemies-enableartifacts"] and settings.startup["bobmods-enemies-enableartifacts"].value then
+if mods["bobtech"] and mods["bobenemies"] and settings.startup["bobmods-enemies-enablenewartifacts"] and settings.startup["bobmods-enemies-enablenewartifacts"].value and settings.startup["bobmods-enemies-enableartifacts"] and settings.startup["bobmods-enemies-enableartifacts"].value then
 -- science groups
 data:extend ({
 	{
@@ -33,7 +33,6 @@ data:extend({
 		},
 		prerequisites =
 		{
-			"advanced-research",
 			"chemical-science-pack",
 			"military-science-pack",
 		},
@@ -142,4 +141,5 @@ data:extend({
 		order = "sct-pack-e[alien]",
 	},
 })
+sctm.tech_unlock_remove("alien-research","science-pack-gold")
 end

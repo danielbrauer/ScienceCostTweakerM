@@ -1,7 +1,7 @@
 -- sctm helper functions
 if not sctm then sctm = {} end
 -- uncomment this to enable debug output
---sctm.enabledebug = true
+-- sctm.enabledebug = true
 
 function sctm.debug(logtext)
 	if (sctm.enabledebug) then
@@ -16,14 +16,23 @@ end
 -- lab functions
 function sctm.lab_input_remove(labname, packname)
 	local removed = false
+	sctm.debug("removing " .. packname .. " from " .. labname)
 	if data.raw.lab[labname] and data.raw.lab[labname].inputs then
 		local labinputs = data.raw.lab[labname].inputs
+		local newinputs = {}
 		for _i, inputpack in pairs(labinputs) do
 			if inputpack and inputpack == packname then
-				table.remove(labinputs, _i)
+--				table.remove(labinputs, _i)
+--				labinputs[_i] = nil
 				removed = true
-				break
+--				break
+			else
+				table.insert(newinputs, inputpack)
 			end
+		end
+		if removed then
+			data.raw.lab[labname].inputs = newinputs
+			sctm.debug("removed " .. packname .. " from " .. labname)
 		end
 	end
 	if not data.raw.lab[labname] then
@@ -48,7 +57,8 @@ function sctm.lab_input_add(labname, packname)
 			end
 		end
 		if not hasinput then
-			labinputs[#labinputs + 1] = packname
+			local inputsize = table_size(labinputs)
+			labinputs[inputsize + 1] = packname
 			added = true
 		end
 	end	
@@ -67,6 +77,7 @@ local function removeprereq(prereqtable, depname)
 	for _i, dep in pairs(prereqtable) do
 		if dep and dep == depname then
 			table.remove(prereqtable, _i)
+--			prereqtable[_i] = nil
 			removed = true
 			break
 		end
@@ -112,15 +123,18 @@ local function addprereq(prereqtable, depname)
 		end
 	end
 	if not hasdep then
-		prereqtable[#prereqtable + 1] = depname
+		local prereqsize = table_size(prereqtable)
+		prereqtable[prereqsize + 1] = depname
 		added = true
 	end	
 end
 
-function sctm.tech_dependency_add(techname, depname)
+function sctm.tech_dependency_add(techname, depname, hidden)
 	local added = false
+	local addhidden = hidden or false
 	sctm.debug("insert dep " .. depname .. " into " .. techname)
-	if data.raw.technology[techname] and data.raw.technology[depname] then
+	if data.raw.technology[techname] and (data.raw.technology[techname].enabled or true) and not (data.raw.technology[techname].hidden or false) and 
+		data.raw.technology[depname] and (data.raw.technology[depname].enabled or true) and (not (data.raw.technology[depname].hidden or false) or addhidden) then
 		local tech = data.raw.technology[techname]
 		local hasdiff = false
 		if tech.normal then
@@ -145,13 +159,37 @@ function sctm.tech_dependency_add(techname, depname)
 		end
 	end
 	--sctm.debug(techname .. ":" .. serpent.block(data.raw.technology[techname]))	
-	if not data.raw.technology[techname] then
-		sctm.debug("attempting to update nonexistent technology " .. techname)
+	if not data.raw.technology[techname] or not (data.raw.technology[techname].enabled or true) or (data.raw.technology[techname].hidden or false) then
+		sctm.debug("attempting to update nonexistent or disabled technology " .. techname)
 	end
-	if not data.raw.technology[depname] then
-		sctm.debug("attempting to insert nonexistent technology " .. depname)
+	if not data.raw.technology[depname] or not (data.raw.technology[depname].enabled or true) or not (not (data.raw.technology[depname].hidden or false) or addhidden) then
+		sctm.debug("attempting to insert nonexistent or disabled technology " .. depname)
 	end
 	return added
+end
+
+function sctm.tech_dependency_get(techname)
+	local deps = {}
+	sctm.debug("retrieving dps for " .. techname)
+	if data.raw.technology[techname] then
+		local tech = data.raw.technology[techname]
+		if tech.normal and tech.normal.prerequisites then
+			for _i, prereq in pairs(tech.normal.prerequisites) do
+				table.insert(deps, prereq)
+			end
+		end
+		if tech.expensive and tech.expensive.prerequisites then
+			for _i, prereq in pairs(tech.expensive.prerequisites) do
+				table.insert(deps, prereq)
+			end
+		end
+		if tech.prerequisites then
+			for _i, prereq in pairs(tech.prerequisites) do
+				table.insert(deps, prereq)
+			end
+		end
+	end
+	return deps
 end
 
 -- ingredients = { ["automation-science-pack"] = 1 }
@@ -159,7 +197,8 @@ local function rempack(ingredientstable, packname)
 	local removed = false
 	for _i, pack in pairs(ingredientstable) do
 		if pack and (pack[1] == packname or (pack.name and pack.name == packname))then
-			table.remove(ingredientstable)
+			table.remove(ingredientstable,_i)
+--			ingredientstable[_i] = nil
 			removed = true
 			break
 		end
@@ -208,7 +247,8 @@ local function addpack(ingredientstable, newpack)
 		end
 	end
 	if not found then
-		ingredientstable[#ingredientstable + 1] = newpack
+		local ingredientsize = table_size(ingredientstable)
+		ingredientstable[ingredientsize + 1] = newpack
 		added = true
 	end
 	return addedd
@@ -323,7 +363,8 @@ local function addunlock(effectstable, recipename)
 		end
 	end
 	if not hasunlock then
-		effectstable[#effectstable + 1] = { type="unlock-recipe", recipe = recipename }
+		local effectsize = table_size(effectstable)
+		effectstable[effectsize + 1] = { type="unlock-recipe", recipe = recipename }
 	end
 end
 
@@ -365,6 +406,7 @@ local function removeunlock(effectstable, recipename)
 	for _i, effect in pairs(effectstable) do
 		if effect and effect.type == "unlock-recipe" and effect.recipe == recipename then
 			table.remove(effectstable, _i)
+--			effectstable[_i] = nil
 			removed = true
 			break
 		end
@@ -413,6 +455,7 @@ local function removeknownpacks(effectstable, packtable, techname)
 				if (pack.partial and name.find(pack.name, 1, true) ~= nil) or (not pack.partial and name == pack.name) then
 					sctm.debug("Moved science pack '" .. name .. "', unlocked by '" .. techname .. "' to research tree.")
 					table.remove(effectstable, _j)
+--					effectstable[_j] = nil
 					removedone = true
 				end
 			end
@@ -452,27 +495,31 @@ function sctm.tech_remove_known_packs(techname, packlist)
 	return removed
 end
 
-function sctm.tech_replace(oldtech, newtech)
+function sctm.tech_replace(oldtechname, newtechname)
 	local replaced = false
-	if (data.raw.technology[oldtech] and data.raw.technology[newtech]) then
-		if (data.raw.technology[oldtech].prerequisites) then
-			for _, prereq in pairs(data.raw.technology[oldtech].prerequisites) do
-				if (not sctm.find_in_table(data.raw.technology[newtech].prerequisites, prereq)) then
-					data.raw.technology[newtech].prerequisites[#data.raw.technology[newtech].prerequisites + 1] = prereq
+	if (data.raw.technology[oldtechname] and data.raw.technology[newtechname]) then
+		local oldtech = data.raw.technology[oldtechname]
+		local newtech = table.deepcopy(data.raw.technology[newtechname])
+		if (oldtech.prerequisites) then
+			for _, prereq in pairs(oldtech.prerequisites) do
+				if (not sctm.find_in_table(newtech.prerequisites, prereq)) then
+					local prereqsize = table_size(newtech.prerequisites)
+					newtech.prerequisites[prereqsize + 1] = prereq
 				end
 			end
 		end
-		if (data.raw.technology[oldtech].effects) then
-			for _, eff in pairs(data.raw.technology[oldtech].effects) do
-				if (not sctm.find_in_table(data.raw.technology[newtech].effects, eff)) then
-					data.raw.technology[newtech].effects[#data.raw.technology[newtech].effects + 1] = eff
+		if (oldtech.effects) then
+			for _, eff in pairs(oldtech.effects) do
+				if (not sctm.find_in_table(newtech.effects, eff)) then
+					local effectsize = table_size(newtech.effects)
+					newtech.effects[effectsize + 1] = eff
 				end
 			end
 		end
-		local newpack = table.deepcopy(data.raw.technology[newtech])
-		newpack.name = oldtech
-		data.raw.technology[newtech].enabled = false
-		data.raw.technology[oldtech] = newpack
+		newtech.name = oldtech.name
+		data.raw.technology[newtechname].enabled = false
+		data.raw.technology[newtechname].hidden = true
+		data.raw.technology[oldtechname] = newtech
 		replaced = true;
 	end
 	return replaced
@@ -503,6 +550,7 @@ local function removeingredient(ingredientstable, ingredientname)
 	for _i, ingredient in pairs(ingredientstable) do
 		if ingredient and (ingredient[1] == ingredientname or (ingredient.name and ingredient.name == ingredientname)) then
 			table.remove(ingredientstable, _i)
+--			ingredientstable[_i] = nil
 			removed = true
 			break
 		end
@@ -553,7 +601,8 @@ local function addingredient(ingredientstable, newingredient)
 		end
 	end
 	if not added then
-		ingredientstable[#ingredientstable + 1] = newingredient
+		local ingredientsize = table_size(ingredientstable)
+		ingredientstable[ingredientsize + 1] = newingredient
 		added = true
 	end
 	return added
@@ -812,4 +861,20 @@ function sctm.find_in_table(table, what)
 		end
 	end
 	return false
+end
+
+function sctm.hide_recipe(recipe_name)
+  r = data.raw.recipe[recipe_name]
+  if r then
+    if not r.normal and not r.expensive then
+      r.hidden = true
+    else
+      if r.normal then
+        r.normal.hidden = true
+      end
+      if r.expensive then
+        r.expensive.hidden = true
+      end
+    end
+  end
 end

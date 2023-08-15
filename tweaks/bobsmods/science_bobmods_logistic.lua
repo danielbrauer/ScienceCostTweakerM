@@ -9,6 +9,61 @@ if mods["bobtech"] then
 		},
 	})
 
+	-- technology
+	data:extend({
+		{
+			type = "technology",
+			name = "sct-advanced-logistic-science-pack",
+			icon = "__ScienceCostTweakerM__/graphics/bobmods/logistic-science-pack-128.png",
+			icon_size = 128,
+			effects =
+			{
+--[[			
+				{
+					type = "unlock-recipe",
+					recipe = "advanced-logistic-science-pack",
+				},
+]]--				
+				{
+					type = "unlock-recipe",
+					recipe = "sct-logistic-cargo-unit",
+				},
+				{
+					type = "unlock-recipe",
+					recipe = "sct-logistic-memory-unit",
+				},
+				{
+					type = "unlock-recipe",
+					recipe = "sct-logistic-unimover",
+				},
+				{
+					type = "unlock-recipe",
+					recipe = "sct-logistic-automated-storage",
+				},
+			},
+			prerequisites =
+			{
+				"robotics",
+--				"chemical-science-pack",
+				"circuit-network",
+				"advanced-electronics-2"
+--				"sct-lab-t4",
+			},
+			unit =
+			{
+				count = 90,
+				ingredients = 
+				{
+					{"automation-science-pack", 1},
+					{"logistic-science-pack", 1},
+					{"chemical-science-pack", 1},
+				},
+				time = 3,
+			},
+			order = "sct-pack-d[logistic]",
+		},
+	})
+
 	-- logistic pack items
 	data:extend ({
 		{
@@ -245,6 +300,8 @@ if mods["bobtech"] then
 			},
 		},
 	})
+	sctm.tech_dependency_add("sct-advanced-logistic-science-pack", "cobalt-processing")
+	sctm.tech_dependency_add("sct-advanced-logistic-science-pack", "titanium-processing")
 	else
 	data:extend({
 		{
@@ -397,106 +454,5 @@ if mods["bobtech"] then
 			},
 		},
 	})
-	end
-
-	-- technology
-	data:extend({
-		{
-			type = "technology",
-			name = "sct-advanced-logistic-science-pack",
-			icon = "__ScienceCostTweakerM__/graphics/bobmods/logistic-science-pack-128.png",
-			icon_size = 128,
-			effects =
-			{
---[[			
-				{
-					type = "unlock-recipe",
-					recipe = "advanced-logistic-science-pack",
-				},
-]]--				
-				{
-					type = "unlock-recipe",
-					recipe = "sct-logistic-cargo-unit",
-				},
-				{
-					type = "unlock-recipe",
-					recipe = "sct-logistic-memory-unit",
-				},
-				{
-					type = "unlock-recipe",
-					recipe = "sct-logistic-unimover",
-				},
-				{
-					type = "unlock-recipe",
-					recipe = "sct-logistic-automated-storage",
-				},
-			},
-			prerequisites =
-			{
-				"robotics",
-				"chemical-science-pack",
-				"circuit-network",
-				"sct-lab-t4",
-			},
-			unit =
-			{
-				count = 90,
-				ingredients = 
-				{
-					{"automation-science-pack", 1},
-					{"logistic-science-pack", 1},
-					{"chemical-science-pack", 1},
-				},
-				time = 3,
-			},
-			order = "sct-pack-d[logistic]",
-		},
-	})
-
-	if sctm.enabledebug then
-	data:extend({	
-		{
-			type = "recipe",
-			name = "sct-logistic-temporary-component",
-			subgroup = "sct-advanced-logistic-science-pack",
-			order = "h_a[logistic]-c[unimover]",
-			category = "crafting-with-fluid",
-			expensive =
-			{
-				enabled = false,
-				energy_required = 4,
-				ingredients =
-				{
-					{"advanced-circuit", 8},
-					{"titanium-bearing-ball", 12},
-					{"cobalt-steel-gear-wheel", 12},
-					{"aluminium-plate",15},
-					{type="fluid", name="lubricant",amount=50}
-				},
-				results = 
-				{
-					{type="item", name="sct-logistic-unimover", amount=1},
-				},
-			},
-			normal =
-			{
-				enabled = false,
-				energy_required = 2,
-				ingredients =
-				{
-					{"advanced-circuit", 4},
-					{"titanium-bearing-ball", 6},
-					{"cobalt-steel-gear-wheel", 6},
-					{"aluminium-plate",8},
-					{type="fluid", name="lubricant",amount=20}
-				},
-				results = 
-				{
-					{type="item", name="sct-logistic-unimover", amount=1},
-				},
-			},
-		},
-	})
-		sctm.tech_unlock_add("sct-advanced-logistic-science-pack", "sct-logistic-temporary-component")
 	end
 end
