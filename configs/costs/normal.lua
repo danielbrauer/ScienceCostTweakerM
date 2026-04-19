@@ -20,5 +20,4 @@ sct_cost.normal.costs.military = SCT_newTier(1.0, 4.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
 sct_cost.normal.costs.production = SCT_newTier(1.0, 4.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) -- 4x overall more expensive
 sct_cost.normal.costs.tier3 = SCT_newTier(1.0, 6.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) -- 6x overall more expensive
 sct_cost.normal.costs.hightech = SCT_newTier(1.0, 8.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) -- 8x overall more expensive
-sct_cost.normal.costs.bobmodules = SCT_newBobModules(1.0, 8.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) -- 8x overall more expensive
 sct_cost.normal.costs.formula = SCT_formulaMod(1.0, "(", ")") -- No change

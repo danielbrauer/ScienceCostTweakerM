@@ -61,20 +61,3 @@ function SCT_newBobModules(
 
   return costAdjuster
 end
-
--- Research using Dark Matter Replicators research components
-function SCT_newDarkMatter(timeMult, stepCountMult, tehemutMult, scoopMult, transducerMult, conduitMult)
-  local costAdjuster = {
-    time = timeMult, -- How much the time of the research is multiplied by
-    stepCount = stepCountMult, -- How much the count (number of research steps) of the research is multiplied by
-    -- How much the number of science packs per research-step of the research is multiplied by
-    cost = {},
-  }
-
-  costAdjuster.cost["tenemut"] = tehemutMult -- Multiplier to Tehemut Ore
-  costAdjuster.cost["dark-matter-scoop"] = scoopMult -- Multiplier to Dark Matter Scoops
-  costAdjuster.cost["dark-matter-transducer"] = transducerMult -- Multiplier to Dark Matter Transducers
-  costAdjuster.cost["matter-conduit"] = conduitMult -- Multiplier to Matter Conduits
-
-  return costAdjuster
-end

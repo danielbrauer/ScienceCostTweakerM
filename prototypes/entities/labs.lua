@@ -64,7 +64,6 @@ data:extend({
         filename = "__base__/sound/lab.ogg",
         volume = 0.7,
       },
-      apparent_volume = 1,
     },
     energy_source = {
       type = "electric",
@@ -74,13 +73,9 @@ data:extend({
     inputs = {
       "automation-science-pack",
       "logistic-science-pack",
+      "military-science-pack",
     },
-    module_specification = {
-      module_slots = 0,
-      max_entity_info_module_icons_per_row = 3,
-      max_entity_info_module_icon_rows = 1,
-      module_info_icon_shift = { 0, 0.9 },
-    },
+    module_slots = 0,
     fast_replaceable_group = "lab",
     next_upgrade = "sct-lab-t3",
   },
@@ -146,7 +141,6 @@ data:extend({
         filename = "__base__/sound/lab.ogg",
         volume = 0.7,
       },
-      apparent_volume = 1,
     },
     energy_source = {
       type = "electric",
@@ -159,14 +153,9 @@ data:extend({
       "chemical-science-pack",
       "military-science-pack",
       "production-science-pack",
-      --			"utility-science-pack",
+      --"utility-science-pack",
     },
-    module_specification = {
-      module_slots = 0,
-      max_entity_info_module_icons_per_row = 3,
-      max_entity_info_module_icon_rows = 1,
-      module_info_icon_shift = { 0, 0.9 },
-    },
+    module_slots = 0,
     fast_replaceable_group = "lab",
     next_upgrade = "sct-lab-t4",
   },
@@ -233,7 +222,6 @@ data:extend({
         filename = "__base__/sound/lab.ogg",
         volume = 0.7,
       },
-      apparent_volume = 1,
     },
     energy_source = {
       type = "electric",
@@ -249,20 +237,15 @@ data:extend({
       "utility-science-pack",
       "space-science-pack",
     },
-    module_specification = {
-      module_slots = 0,
-      max_entity_info_module_icons_per_row = 3,
-      max_entity_info_module_icon_rows = 1,
-      module_info_icon_shift = { 0, 0.9 },
-    },
+    module_slots = 0,
     fast_replaceable_group = "lab",
   },
 })
 
 -- Rework vanilla science lab into a Tier 1 science lab.
-data.raw["item"]["lab"].subgroup = "sct-labs"
-data.raw["item"]["lab"].order = "a[labs]-a[lab1]"
-data.raw["item"]["lab"].icons = {
+data.raw.item["lab"].subgroup = "sct-labs"
+data.raw.item["lab"].order = "a[labs]-a[lab]"
+data.raw.item["lab"].icons = {
   {
     icon_size = 64,
     icon = "__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png",
@@ -272,8 +255,9 @@ data.raw["item"]["lab"].icons = {
     icon = "__ScienceCostTweakerM__/graphics/overlays/1-64.png",
   },
 }
+data.raw.item["lab"].icon = nil
 
-data.raw["lab"]["lab"].icons = {
+data.raw.lab["lab"].icons = {
   {
     icon_size = 64,
     icon = "__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png",
@@ -283,9 +267,10 @@ data.raw["lab"]["lab"].icons = {
     icon = "__ScienceCostTweakerM__/graphics/overlays/1-64.png",
   },
 }
-data.raw["lab"]["lab"].collision_box = { { -1.2, -1.2 }, { 1.2, 1.2 } }
-data.raw["lab"]["lab"].selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } }
-data.raw["lab"]["lab"].on_animation = {
+data.raw.lab["lab"].icon = nil
+data.raw.lab["lab"].collision_box = { { -1.2, -1.2 }, { 1.2, 1.2 } }
+data.raw.lab["lab"].selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } }
+data.raw.lab["lab"].on_animation = {
   filename = "__ScienceCostTweakerM__/graphics/sct-lab-t1/entity.png",
   width = 113,
   height = 91,
@@ -294,41 +279,30 @@ data.raw["lab"]["lab"].on_animation = {
   animation_speed = 1 / 3,
   shift = { 0.2, 0.15 },
 }
-data.raw["lab"]["lab"].off_animation = {
+data.raw.lab["lab"].off_animation = {
   filename = "__ScienceCostTweakerM__/graphics/sct-lab-t1/entity.png",
   width = 113,
   height = 91,
   frame_count = 1,
   shift = { 0.2, 0.15 },
 }
-data.raw["lab"]["lab"].energy_usage = "60kW"
-data.raw["lab"]["lab"].inputs = {
+data.raw.lab["lab"].energy_usage = "60kW"
+data.raw.lab["lab"].inputs = {
   "automation-science-pack",
 }
-data.raw["lab"]["lab"].module_specification = {
-  module_slots = 0,
-  max_entity_info_module_icons_per_row = 3,
-  max_entity_info_module_icon_rows = 1,
-  module_info_icon_shift = { 0, 0.9 },
-}
-data.raw["lab"]["lab"].fast_replaceable_group = "lab"
-data.raw["lab"]["lab"].next_upgrade = "sct-lab-t2"
+data.raw.lab["lab"].module_slots = 0
+data.raw.lab["lab"].fast_replaceable_group = "lab"
+data.raw.lab["lab"].next_upgrade = "sct-lab-t2"
 
 if settings.startup["sct-lab-modules"].value == "tier3" then
-  data.raw["lab"]["sct-lab-t3"].module_specification.module_slots = 1
-  data.raw["lab"]["sct-lab-t4"].module_specification.module_slots = 2
-end
-
-if settings.startup["sct-lab-modules"].value == "tier4" then
-  data.raw["lab"]["sct-lab-t4"].module_specification.module_slots = 2
+  data.raw.lab["sct-lab-t3"].module_slots = 1
+  data.raw.lab["sct-lab-t4"].module_slots = 2
+elseif settings.startup["sct-lab-modules"].value == "tier4" then
+  data.raw.lab["sct-lab-t4"].module_slots = 2
 end
 
 if settings.startup["sct-lab-scaling"].value == true then
-  data.raw["lab"]["sct-lab-t2"].researching_speed = 1.1
-  data.raw["lab"]["sct-lab-t3"].researching_speed = 1.3
-  data.raw["lab"]["sct-lab-t4"].researching_speed = 1.5
-end
-
-if settings.startup["sct-military"].value == "tier2" then
-  sctm.lab_input_add("sct-lab-t2", "military-science-pack")
+  data.raw.lab["sct-lab-t2"].researching_speed = 1.1
+  data.raw.lab["sct-lab-t3"].researching_speed = 1.3
+  data.raw.lab["sct-lab-t4"].researching_speed = 1.5
 end

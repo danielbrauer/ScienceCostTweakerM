@@ -17,11 +17,3 @@ local function overwrite_setting(setting_type, setting_name, value)
     log("Error: missing setting type " .. setting_type)
   end
 end
-
-if mods["angelsindustries"] then
-  overwrite_setting("bool-setting", "angels-enable-tech", false)
-end
-
-if mods["WireShortcuts"] then
-  overwrite_setting("bool-setting", "wire-shortcuts-is-retain-wire-crafting", true)
-end

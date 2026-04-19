@@ -203,11 +203,32 @@ data:extend({
   -- =============================
   {
     type = "item",
+    name = "sct-cyan-wire",
+    icon_size = 64,
+    icon = "__ScienceCostTweakerM__/graphics/icons/cyan-wire.png",
+    subgroup = "sct-sciencepack-prod",
+    order = "h[prod]-b[cyan-wire]",
+    stack_size = 200
+  },
+
+  -- =============================
+  {
+    type = "item",
+    name = "sct-magenta-wire",
+    icon_size = 64,
+    icon = "__ScienceCostTweakerM__/graphics/icons/magenta-wire.png",
+    subgroup = "sct-sciencepack-prod",
+    order = "h[prod]-c[cyan-wire]",
+    stack_size = 200
+  },
+
+  {
+    type = "item",
     name = "sct-prod-bioprocessor",
     icon_size = 32,
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-prod-bioprocessor.png",
     subgroup = "sct-sciencepack-prod",
-    order = "h[prod]-b[bioprocessor]",
+    order = "h[prod]-d[bioprocessor]",
     stack_size = 200,
   },
 
@@ -217,7 +238,7 @@ data:extend({
     icon_size = 32,
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-prod-baked-biopaste.png",
     subgroup = "sct-sciencepack-prod",
-    order = "h[prod]-c[biopaste]",
+    order = "h[prod]-e[biopaste]",
     stack_size = 200,
   },
 
@@ -227,7 +248,7 @@ data:extend({
     icon_size = 32,
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-prod-biosilicate.png",
     subgroup = "sct-sciencepack-prod",
-    order = "h[prod]-d[biosilicate]",
+    order = "h[prod]-f[biosilicate]",
     stack_size = 200,
   },
 
@@ -237,7 +258,7 @@ data:extend({
     icon_size = 32,
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-prod-overclocker.png",
     subgroup = "sct-sciencepack-prod",
-    order = "h[prod]-e[overclocker]",
+    order = "h[prod]-g[overclocker]",
     stack_size = 200,
   },
 
@@ -247,7 +268,7 @@ data:extend({
     icon_size = 32,
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-prod-chipcase.png",
     subgroup = "sct-sciencepack-prod",
-    order = "h[prod]-f[chipcase]",
+    order = "h[prod]-h[chipcase]",
     stack_size = 200,
   },
 

@@ -8,7 +8,6 @@ data:extend({
     type = "item-group",
     name = "sct-science",
     order = "c-sct",
-    inventory_order = "c-sct",
     icon = "__ScienceCostTweakerM__/graphics/icons/sct-science-64.png",
     icon_size = 64,
   },
@@ -50,16 +49,16 @@ data:extend({
 
   {
     type = "item-subgroup",
-    name = "sct-sciencepack-3",
+    name = "sct-sciencepack-mil",
     group = "sct-science",
-    order = "f[t3]",
+    order = "f[mil]",
   },
 
   {
     type = "item-subgroup",
-    name = "sct-sciencepack-mil",
+    name = "sct-sciencepack-3",
     group = "sct-science",
-    order = "g[mil]",
+    order = "g[t3]",
   },
 
   {

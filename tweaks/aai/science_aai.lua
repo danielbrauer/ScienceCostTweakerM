@@ -39,26 +39,16 @@ if mods["aai-industry"] then
       type = "recipe",
       name = "sct-t0-crate",
       subgroup = "sct-science-pack-0",
-      order = "d[t0]-b[crate]",
-      expensive = {
-        enabled = true,
-        energy_required = 2,
-        ingredients = {
-          { type = "item", name = "stone", amount = 4 },
-        },
-        results = {
-          { type = "item", name = "sct-t0-crate", amount = 1 },
-        },
+      order = "d[t0]-b[crate]", 
+      enabled = true,
+      energy_required = 1,
+      ingredients = 
+      {
+        { type = "item", name = "stone", amount = 2 },
       },
-      normal = {
-        enabled = true,
-        energy_required = 1,
-        ingredients = {
-          { type = "item", name = "stone", amount = 2 },
-        },
-        results = {
-          { type = "item", name = "sct-t0-crate", amount = 1 },
-        },
+      results = 
+      {
+        { type = "item", name = "sct-t0-crate", amount = 1 },
       },
     },
 
@@ -67,27 +57,16 @@ if mods["aai-industry"] then
       name = "sct-t0-solvent",
       subgroup = "sct-science-pack-0",
       order = "d[t0]-c[solvent]",
-      expensive = {
-        enabled = true,
-        energy_required = 2.5,
-        ingredients = {
-          { type = "item", name = "iron-ore", amount = 3 },
-          { type = "item", name = "wood", amount = 4 },
-        },
-        results = {
-          { type = "item", name = "sct-t0-solvent", amount = 1 },
-        },
+      enabled = true,
+      energy_required = 1,
+      ingredients = 
+      {
+        { type = "item", name = "iron-ore", amount = 2 },
+        { type = "item", name = "wood", amount = 2 },
       },
-      normal = {
-        enabled = true,
-        energy_required = 1,
-        ingredients = {
-          { type = "item", name = "iron-ore", amount = 2 },
-          { type = "item", name = "wood", amount = 2 },
-        },
-        results = {
-          { type = "item", name = "sct-t0-solvent", amount = 1 },
-        },
+      results = 
+      {
+        { type = "item", name = "sct-t0-solvent", amount = 1 },
       },
     },
   })
@@ -116,28 +95,18 @@ if mods["aai-industry"] then
       type = "recipe",
       name = "sct-science-pack-0",
       subgroup = "sct-science-pack-0",
-      order = "d[t0]-a[pack]",
-      expensive = {
-        enabled = true,
-        energy_required = 3,
-        ingredients = {
-          { type = "item", name = "sct-t0-crate", amount = 2 },
-          { type = "item", name = "sct-t0-solvent", amount = 2 },
-        },
-        results = {
-          { type = "item", name = "sct-science-pack-0", amount = 4 },
-        },
+      order = "d[t0]-a[pack]",  
+      enabled = true,
+      always_show_made_in = true,
+      energy_required = 3,
+      ingredients = 
+      {
+        {type="item", name="sct-t0-crate", amount=2},
+        {type="item", name="sct-t0-solvent", amount=2},
       },
-      normal = {
-        enabled = true,
-        energy_required = 3,
-        ingredients = {
-          { type = "item", name = "sct-t0-crate", amount = 2 },
-          { type = "item", name = "sct-t0-solvent", amount = 2 },
-        },
-        results = {
-          { type = "item", name = "sct-science-pack-0", amount = 4 },
-        },
+      results = 
+      {
+        {type="item", name="sct-science-pack-0", amount=4},
       },
     },
   })

@@ -1,13 +1,9 @@
-if
-  mods["bobtech"]
-  and mods["bobenemies"]
-  and settings.startup["bobmods-enemies-enablenewartifacts"]
-  and settings.startup["bobmods-enemies-enablenewartifacts"].value
-  and settings.startup["bobmods-enemies-enableartifacts"]
-  and settings.startup["bobmods-enemies-enableartifacts"].value
-then
+if mods["bobtech"] and mods["bobenemies"] and
+  settings.startup["bobmods-enemies-enablenewartifacts"] and settings.startup["bobmods-enemies-enablenewartifacts"].value and
+  settings.startup["bobmods-enemies-enableartifacts"] and settings.startup["bobmods-enemies-enableartifacts"].value then
+
   -- science groups
-  data:extend({
+  data:extend ({
     {
       type = "item-subgroup",
       name = "sct-alien-science-pack",
@@ -22,31 +18,36 @@ then
       type = "technology",
       name = "sct-lab-alien",
       icon_size = 128,
-      icons = {
+      icons =
+      {
         {
           icon = "__ScienceCostTweakerM__/graphics/bobmods/alien-lab-128.png",
         },
         {
           icon = "__ScienceCostTweakerM__/graphics/overlays/alien-128.png",
         },
-      },
-      effects = {
+      },		
+      effects = 
+      {
         {
           type = "unlock-recipe",
-          recipe = "lab-alien",
+          recipe = "bob-lab-alien",
         },
       },
-      prerequisites = {
+      prerequisites =
+      {
         "chemical-science-pack",
         "military-science-pack",
       },
-      unit = {
+      unit =
+      {
         count = 45,
-        ingredients = {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack", 1 },
-          { "chemical-science-pack", 1 },
-          { "military-science-pack", 1 },
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
         },
         time = 30,
       },
@@ -61,23 +62,27 @@ then
       name = "sct-science-pack-gold",
       icon = "__ScienceCostTweakerM__/graphics/bobmods/gold-science-pack-128.png",
       icon_size = 128,
-      effects = {
+      effects =
+      {
         {
           type = "unlock-recipe",
-          recipe = "science-pack-gold",
+          recipe = "bob-science-pack-gold",
         },
       },
-      prerequisites = {
+      prerequisites =
+      {
         "chemical-science-pack",
         "military-science-pack",
       },
-      unit = {
+      unit =
+      {
         count = 90,
-        ingredients = {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack", 1 },
-          { "chemical-science-pack", 1 },
-          { "military-science-pack", 1 },
+        ingredients = 
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
         },
         time = 3,
       },
@@ -89,53 +94,56 @@ then
       name = "sct-alien-science-pack",
       icon = "__ScienceCostTweakerM__/graphics/bobmods/alien-science-pack-128.png",
       icon_size = 128,
-      effects = {
+      effects =
+      {
         {
           type = "unlock-recipe",
-          recipe = "alien-science-pack",
+          recipe = "bob-alien-science-pack",
         },
-        --[[			
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-blue",
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-orange",
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-purple",
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-yellow",
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-green",
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "alien-science-pack-red",
-			},
-]]
-        --
+  --[[			
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-blue",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-orange",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-purple",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-yellow",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-green",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "alien-science-pack-red",
+        },
+  ]]--			
       },
-      prerequisites = {
+      prerequisites =
+      {
         "sct-science-pack-gold",
         "sct-lab-alien",
       },
-      unit = {
+      unit =
+      {
         count = 120,
-        ingredients = {
-          { "science-pack-gold", 1 },
+        ingredients = 
+        {
+          {"bob-science-pack-gold", 1},
         },
         time = 4,
       },
       order = "sct-pack-e[alien]",
     },
   })
-  sctm.tech_unlock_remove("alien-research", "science-pack-gold")
-  sctm.tech_unlock_remove("alien-research", "alien-science-pack")
+  sctm.tech_unlock_remove("bob-alien-research", "bob-science-pack-gold")
+  sctm.tech_unlock_remove("bob-alien-research", "bob-alien-science-pack")
 end
