@@ -1,45 +1,38 @@
 if mods["bobelectronics"] or mods["boblogistics"] or mods["bobplates"] then
   sctm.recipe_ingredient_remove("sct-t3-flash-fuel", "petroleum-gas")
-  sctm.recipe_ingredient_add(
-    "sct-t3-flash-fuel",
-    { type = "fluid", name = "heavy-oil", amount = 10 },
-    { type = "fluid", name = "heavy-oil", amount = 20 }
+  sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "heavy-oil", amount = 10 }
   )
-  sctm.recipe_ingredient_add(
-    "sct-t3-flash-fuel",
-    { type = "fluid", name = "light-oil", amount = 10 },
-    { type = "fluid", name = "light-oil", amount = 20 }
-  )
+  sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "light-oil", amount = 10 })
   sctm.tech_dependency_remove("sct-production-science-pack", "advanced-oil-processing")
 end
 
-if mods["boblibrary"] then
-  if data.raw["recipe-category"]["electronics"] then
-    sctm.add_additional_category("sct-t2-instruments", "electronics")
-    sctm.add_additional_category("sct-t2-wafer-stamp", "electronics")
-    sctm.add_additional_category("sct-mil-circuit1", "electronics")
-    sctm.add_additional_category("sct-mil-circuit2", "electronics")
-    sctm.add_additional_category("sct-mil-circuit3", "electronics")
-    sctm.add_additional_category("sct-prod-bioprocessor", "electronics")
+if data.raw["recipe-category"]["electronics"] then
+  sctm.add_additional_category("sct-t1-ironcore", "electronics")
+  sctm.add_additional_category("sct-t1-magnet-coils", "electronics")
+  sctm.add_additional_category("sct-t2-instruments", "electronics")
+  sctm.add_additional_category("sct-t2-microcircuits", "electronics")
+  sctm.add_additional_category("sct-t2-micro-wafer", "electronics")
+  sctm.add_additional_category("sct-t2-wafer-stamp", "electronics")
+  sctm.add_additional_category("sct-t2-reaction-nodes", "electronics")
+  sctm.add_additional_category("sct-mil-circuit1", "electronics")
+  sctm.add_additional_category("sct-mil-circuit2", "electronics")
+  sctm.add_additional_category("sct-mil-circuit3", "electronics")
+  sctm.add_additional_category("sct-cyan-wire", "electronics")
+  sctm.add_additional_category("sct-magenta-wire", "electronics")
+  sctm.add_additional_category("sct-prod-bioprocessor", "electronics")
+  if data.raw.recipe["sct-logistic-memory-unit"] then
+    sctm.add_additional_category("sct-logistic-memory-unit", "electronics")
   end
+end
 
-  if data.raw["recipe-category"]["electronics-with-fluid"] then
-    sctm.add_additional_category("sct-prod-overclocker", "electronics-with-fluid")
-    sctm.add_additional_category("sct-prod-chipcase", "electronics-with-fluid")
-  end
+if data.raw["recipe-category"]["electronics-with-fluid"] then
+  sctm.add_additional_category("sct-prod-overclocker", "electronics-with-fluid")
+  sctm.add_additional_category("sct-prod-chipcase", "electronics-with-fluid")
 end
 
 if mods["bobplates"] then
   -- Red Science Pack:
   -- =============================
-
-  sctm.tech_dependency_remove("steel-processing", "sct-automation-science-pack")
-
-  sctm.tech_dependency_add("bob-air-compressor-1", "sct-automation-science-pack")
-  sctm.tech_dependency_add("bob-alloy-processing", "sct-automation-science-pack")
-  sctm.tech_dependency_add("bob-chemical-processing-1", "sct-automation-science-pack")
-  sctm.tech_dependency_add("bob-electrolysis-1", "sct-automation-science-pack")
-  sctm.tech_dependency_add("bob-water-bore-1", "sct-automation-science-pack")
 
   -- Green Science Pack:
   -- =============================
@@ -72,7 +65,7 @@ if mods["bobplates"] then
     }
     if mods["angelssmelting"] then
       sctm.tech_dependency_add("sct-lab-t3", "angels-silver-smelting-1")
-    elseif mods["angelsrefining"] then
+    else
       sctm.tech_dependency_add("sct-lab-t3", "bob-lead-processing")
     end
   end
@@ -155,16 +148,8 @@ if mods["bobplates"] then
   end
 
   if data.raw.item["bob-carbon"] then
-    sctm.recipe_ingredient_add(
-      "sct-mil-circuit3",
-      { type = "item", name = "bob-carbon", amount = 4 },
-      { type = "item", name = "bob-carbon", amount = 10 }
-    )
-    sctm.recipe_ingredient_add(
-      "sct-mil-circuit2",
-      { type = "item", name = "bob-carbon", amount = 3 },
-      { type = "item", name = "bob-carbon", amount = 8 }
-    )
+    sctm.recipe_ingredient_add("sct-mil-circuit3", { type = "item", name = "bob-carbon", amount = 4 })
+    sctm.recipe_ingredient_add("sct-mil-circuit2", { type = "item", name = "bob-carbon", amount = 3 })
     sctm.recipe_ingredient_replace("sct-mil-circuit1", "coal", { type = "item", name = "bob-carbon", amount = 0 })
   end
 
@@ -190,6 +175,11 @@ if mods["bobplates"] then
     sctm.tech_dependency_add("sct-production-science-pack", "bob-gold-processing")
   end
 
+  if data.raw.item["bob-tinned-copper-cable"] then
+    sctm.recipe_ingredient_replace("sct-wire-cyan", "copper-cable", "bob-tinned-copper-cable")
+    sctm.recipe_ingredient_replace("sct-wire-magenta", "copper-cable", "bob-tinned-copper-cable")
+  end
+
   -- High-Tech Science Pack:
   -- =============================
 
@@ -200,11 +190,7 @@ if mods["bobplates"] then
   then
     sctm.recipe_ingredient_replace("sct-htech-capbank", "iron-plate", "bob-steel-gear-wheel")
     sctm.recipe_ingredient_replace("sct-htech-capbank", "battery", "bob-lithium-ion-battery")
-    sctm.recipe_ingredient_add(
-      "sct-htech-capbank",
-      { type = "item", name = "bob-silicon-nitride", amount = 10 },
-      { type = "item", name = "bob-silicon-nitride", amount = 25 }
-    )
+    sctm.recipe_ingredient_add("sct-htech-capbank", { type = "item", name = "bob-silicon-nitride", amount = 10 })
     sctm.tech_dependency_remove("sct-utility-science-pack", "battery")
     sctm.tech_dependency_add("sct-utility-science-pack", "bob-battery-2")
     sctm.tech_dependency_add("sct-utility-science-pack", "bob-ceramics")
@@ -221,16 +207,6 @@ if mods["bobplates"] then
     sctm.tech_dependency_add("sct-lab-t4", "bob-gem-processing-3")
     sctm.tech_dependency_add("sct-lab-t4", "bob-titanium-processing")
     sctm.tech_dependency_add("sct-lab-t4", "bob-tungsten-processing")
-    if mods["angelsrefining"] then
-      sctm.tech_pack_add("sct-lab-t4", { "production-science-pack", 1 })
-      sctm.tech_pack_add("sct-utility-science-pack", { "production-science-pack", 1 })
-      sctm.tech_unlock_remove("sct-utility-science-pack", "sct-waste-processing-mixed")
-
-      if data.raw.item["bob-advanced-processing-unit"] then
-        sctm.recipe_ingredient_replace("sct-lab4-manipulators", "processing-unit", "bob-advanced-processing-unit")
-        sctm.tech_dependency_add("sct-lab-t4", "bob-advanced-processing-unit")
-      end
-    end
   end
 
   if data.raw.item["bob-tinned-copper-cable"] then
@@ -249,16 +225,8 @@ if mods["bobplates"] then
 
   if data.raw.item["bob-titanium-gear-wheel"] and data.raw.item["bob-tungsten-gear-wheel"] then
     sctm.recipe_ingredient_replace("sct-htech-random", "iron-gear-wheel", "bob-tungsten-gear-wheel")
-    sctm.recipe_ingredient_add(
-      "sct-htech-random",
-      { type = "item", name = "bob-titanium-gear-wheel", amount = 5 },
-      { type = "item", name = "bob-titanium-gear-wheel", amount = 10 }
-    )
-    sctm.recipe_ingredient_add(
-      "sct-htech-random",
-      { type = "item", name = "bob-titanium-bearing", amount = 10 },
-      { type = "item", name = "bob-titanium-bearing", amount = 15 }
-    )
+    sctm.recipe_ingredient_add("sct-htech-random", { type = "item", name = "bob-titanium-gear-wheel", amount = 5 })
+    sctm.recipe_ingredient_add("sct-htech-random", { type = "item", name = "bob-titanium-bearing", amount = 10 })
   end
 
   -- lab intermediates
@@ -281,48 +249,43 @@ if mods["bobplates"] then
 end
 
 if mods["bobelectronics"] then
-  sctm.tech_dependency_add("sct-lab-t2", "bob-electronics")
   sctm.recipe_ingredient_replace("sct-mil-circuit3", "advanced-circuit", "electronic-circuit")
   sctm.tech_dependency_remove("sct-military-science-pack", "advanced-circuit")
   if data.raw.item["bob-basic-circuit-board"] then
-    sctm.recipe_ingredient_replace("sct-t2-instruments", "electronic-circuit", "bob-basic-circuit-board")
+    local recipe = data.raw.recipe["automation-science-pack"]
+    recipe.ingredients = {
+      { type = "item", name = "bob-basic-circuit-board", amount = 1 },
+      { type = "item", name = "sct-t1-magnet-coils", amount = 1 },
+      { type = "item", name = "sct-t1-ironcore", amount = 2 },
+    }
+    recipe.results = {
+      { type = "item", name = "automation-science-pack", amount = 2 },
+    }
+    local trigger = data.raw.technology["sct-lab-t1"].research_trigger
+    if trigger and trigger.item == "electronic-circuit" then
+      trigger.item = "bob-basic-circuit-board"
+    end
     sctm.recipe_ingredient_replace("sct-lab1-mechanization", "electronic-circuit", "bob-basic-circuit-board")
     sctm.recipe_ingredient_replace("sct-mil-circuit1", "electronic-circuit", "bob-basic-circuit-board")
-    sctm.recipe_ingredient_replace("sct-lab2-automatization", "electronic-circuit", "bob-basic-circuit-board")
   end
   if data.raw.item["bob-insulated-cable"] then
     sctm.recipe_ingredient_replace("sct-htech-capbank", "copper-cable", "bob-insulated-cable")
     sctm.recipe_ingredient_replace("sct-htech-injector", "copper-cable", "bob-insulated-cable")
   end
-
-  if data.raw["recipe-category"]["electronics"] then
-    sctm.add_additional_category("sct-t1-ironcore", "electronics")
-    sctm.add_additional_category("sct-t1-magnet-coils", "electronics")
-    sctm.add_additional_category("sct-t2-microcircuits", "electronics")
-    sctm.add_additional_category("sct-t2-micro-wafer", "electronics")
-    sctm.add_additional_category("sct-t2-reaction-nodes", "electronics")
-    sctm.add_additional_category("sct-mil-circuit3", "electronics")
-    sctm.add_additional_category("sct-mil-circuit2", "electronics")
-    sctm.add_additional_category("sct-mil-circuit1", "electronics")
-    if data.raw.recipe["sct-logistic-memory-unit"] then
-      sctm.add_additional_category("sct-logistic-memory-unit", "electronics")
-    end
-  end
 end
 
 if data.raw.item["angels-chemical-plant-2"] then
   sctm.recipe_ingredient_replace("sct-lab3-construction", "chemical-plant", "angels-chemical-plant-2")
-elseif data.raw.item["bob-chemical-plant-2"] then
-  sctm.recipe_ingredient_replace("sct-lab3-construction", "chemical-plant", "bob-chemical-plant-2")
 end
 
 -- add bob logistic pack if found
 if mods["bobtech"] then
-  sctm.tech_dependency_add("sct-lab-alien", "bob-advanced-research")
-  -- hide bob lab mk2
+  -- repurpose bob lab 2
   if data.raw.lab["bob-lab-2"] then
+    sctm.tech_disable("bob-advanced-research")
     sctm.tech_unlock_remove("bob-advanced-research", "bob-lab-2")
-    -- if someone enables it, move it to sct labs group, and make it hightest tier lab
+
+    -- move it to sct labs group, and make it hightest tier lab
     data.raw.item["bob-lab-2"].subgroup = "sct-labs"
     data.raw.item["bob-lab-2"].order = "b[labs]-e[lab5]"
     data.raw.item["bob-lab-2"].icons = {
@@ -331,7 +294,7 @@ if mods["bobtech"] then
         icon_size = 64,
       },
       {
-        icon = "__ScienceCostTweakerM__/graphics/overlays/beta-64.png",
+        icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
         icon_size = 64,
       },
     }
@@ -343,7 +306,7 @@ if mods["bobtech"] then
       },
       {
         icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/beta-64.png",
+        icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
       },
     }
     data.raw.lab["bob-lab-2"].icon = nil
@@ -358,6 +321,24 @@ if mods["bobtech"] then
     end
     data.raw.lab["sct-lab-t4"].next_upgrade = "bob-lab-2"
     data.raw.lab["lab"].next_upgrade = "sct-lab-t2"
+    
+    -- Update lab energy usage
+    data.raw.lab["bob-lab-2"].energy_usage = "10MW"
+
+    data.raw.recipe["bob-lab-2"].ingredients = {
+      { type = "item", name = "sct-lab-t4", amount = 1 },
+      { type = "item", name = "rocket-silo", amount = 1 },
+      { type = "item", name = "bob-nitinol-alloy", amount = 100 },
+      { type = "item", name = "bulk-inserter", amount = 2 },
+      { type = "item", name = "bob-advanced-processing-unit", amount = 20 },
+    }
+    if data.raw.item["bob-express-bulk-inserter"] then
+      sctm.recipe_ingredient_replace("bob-lab-2", "bulk-inserter", "bob-express-bulk-inserter")
+      sctm.tech_dependency_add("sct-lab-lab2", "bob-bulk-inserter-4")
+    end
+    sctm.tech_dependency_add("sct-lab-lab2", "rocket-silo")
+    sctm.tech_dependency_remove("sct-space-science-pack", "rocket-silo")
+    sctm.tech_dependency_add("sct-space-science-pack", "sct-lab-lab2")
   end
   if data.raw.item["bob-lab-alien"] then
     data.raw.item["bob-lab-alien"].subgroup = "sct-labs"
@@ -390,8 +371,9 @@ if mods["bobtech"] then
     sctm.tech_unlock_remove("bob-alien-research", "bob-lab-alien")
     sctm.tech_dependency_add("bob-alien-research", "sct-alien-science-pack")
     sctm.tech_dependency_remove("bob-alien-research", "bob-advanced-research")
+    sctm.tech_dependency_add("bob-alien-research", "sct-lab-alien")
     sctm.tech_pack_replace("bob-alien-research", "automation-science-pack", "bob-science-pack-gold")
-    sctm.tech_pack_replace("bob-alien-research", "logistic-science-pack", "bob-alien-science-pack")
+    sctm.tech_pack_remove("bob-alien-research", "logistic-science-pack")
     sctm.tech_pack_remove("bob-alien-research", "military-science-pack")
     sctm.tech_pack_remove("bob-alien-research", "chemical-science-pack")
   end
@@ -400,14 +382,17 @@ if mods["bobtech"] then
     sctm.lab_input_remove("lab", "bob-advanced-logistic-science-pack")
     sctm.lab_input_add("sct-lab-t3", "bob-advanced-logistic-science-pack")
     sctm.lab_input_add("sct-lab-t4", "bob-advanced-logistic-science-pack")
+    if data.raw.lab["bob-lab-2"] then
+      sctm.lab_input_add("bob-lab-2", "bob-advanced-logistic-science-pack")
+    end
 
     data.raw.tool["bob-advanced-logistic-science-pack"].subgroup = "sct-advanced-logistic-science-pack"
     data.raw.tool["bob-advanced-logistic-science-pack"].order = "h_a[logistic]"
     data.raw.tool["bob-advanced-logistic-science-pack"].icon_size = 64
     data.raw.tool["bob-advanced-logistic-science-pack"].icon =
       "__ScienceCostTweakerM__/graphics/bobmods/logistic-science-pack-64.png"
-    local logisticrecipe = table.deepcopy(data.raw.recipe["sct-advanced-logistic-science-pack"])
-    sctm.hide_recipe("sct-advanced-logistic-science-pack")
+    local logisticrecipe = data.raw.recipe["sct-advanced-logistic-science-pack"]
+    data.raw.recipe["sct-advanced-logistic-science-pack"] = nil
     logisticrecipe.name = "bob-advanced-logistic-science-pack"
     data.raw.recipe["bob-advanced-logistic-science-pack"] = logisticrecipe
   end
@@ -443,11 +428,7 @@ if mods["bobtech"] then
 end
 
 if mods["bobplates"] and mods["bobelectronics"] and mods["bobtech"] then
-  sctm.recipe_ingredient_add(
-    "sct-logistic-memory-unit2",
-    { type = "item", name = "bob-silicon-wafer", amount = 2 },
-    { type = "item", name = "bob-silicon-wafer", amount = 4 }
-  )
+  sctm.recipe_ingredient_add("sct-logistic-memory-unit2", { type = "item", name = "bob-silicon-wafer", amount = 2 })
 end
 
 if mods["boblogistics"] then
@@ -467,40 +448,7 @@ if mods["boblogistics"] then
   if
     settings.startup["bobmods-logistics-beltoverhaul"] and settings.startup["bobmods-logistics-beltoverhaul"].value
   then
-    if not (mods["bobtech"] and settings.startup["bobmods-burnerphase"].value) then
-      sctm.tech_dependency_remove("logistics", "sct-automation-science-pack")
-      sctm.tech_dependency_add("logistics-0", "sct-automation-science-pack")
-    end
     sctm.recipe_ingredient_replace("sct-lab1-mechanization", "transport-belt", "bob-basic-transport-belt")
-  end
-end
-
-if mods["bobtech"] and settings.startup["bobmods-burnerphase"].value then
-  sctm.tech_disable("lab")
-  if data.raw.technology["lab"] then
-    local deps = sctm.tech_dependency_get("lab")
-    if deps and #deps then
-      --      sctm.log(serpent.block(deps))
-      for _i, prereq in pairs(deps) do
-        sctm.tech_dependency_add("sct-lab-t1", prereq)
-      end
-    end
-  end
-  sctm.tech_disable("automation-science-pack")
-  if data.raw.technology["automation-science-pack"] then
-    local deps = sctm.tech_dependency_get("automation-science-pack")
-    --    sctm.log(serpent.block(deps))
-    if deps and #deps then
-      for _i, prereq in pairs(deps) do
-        sctm.tech_dependency_add("sct-automation-science-pack", prereq)
-      end
-    end
-  end
-  if data.raw.recipe["bob-burner-lab"] then
-    data.raw.recipe["bob-burner-lab"].subgroup = "sct-labs"
-  end
-  if data.raw.item["bob-burner-lab"] then
-    data.raw.item["bob-burner-lab"].subgroup = "sct-labs"
   end
 end
 
@@ -515,16 +463,6 @@ if mods["bobrevamp"] then
   end
 end
 
-if mods["bobmining"] then
-  if data.raw.technology["bob-water-miner-1"] then
-    sctm.tech_dependency_add("bob-water-miner-1", "sct-automation-science-pack")
-  end
-end
-
 if mods["bobgreenhouse"] then
-  sctm.tech_dependency_add("bob-greenhouse", "sct-automation-science-pack")
-end
-
-if mods["bobwarfare"] then
-  sctm.tech_dependency_add("sct-space-science-pack", "bob-radars-5")
+  sctm.tech_unlock_remove("automated-rail-transportation", "iron-stick")
 end

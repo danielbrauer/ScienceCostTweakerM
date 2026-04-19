@@ -11,7 +11,7 @@ if mods["bobtech"] then
           icon_size = 128,
         },
         {
-          icon = "__ScienceCostTweakerM__/graphics/overlays/beta-128.png",
+          icon = "__ScienceCostTweakerM__/graphics/overlays/5-128.png",
           icon_size = 128,
         },
       },

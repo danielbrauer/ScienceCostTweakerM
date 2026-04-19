@@ -375,9 +375,10 @@ data:extend({
     subgroup = "sct-sciencepack-prod",
     order = "h[prod]-b[cyan-wire]",
     enabled = false,
-    energy_required = 15,
+    energy_required = 0.5,
     ingredients = {
       { type = "item", name = "copper-cable", amount = 1 },
+      { type = "item", name = "electronic-circuit", amount = 1 },
     },
     results = {
       { type = "item", name = "sct-cyan-wire", amount = 1 },
@@ -390,9 +391,10 @@ data:extend({
     subgroup = "sct-sciencepack-prod",
     order = "h[prod]-c[magenta-wire]",
     enabled = false,
-    energy_required = 15,
+    energy_required = 0.5,
     ingredients = {
       { type = "item", name = "copper-cable", amount = 1 },
+      { type = "item", name = "electronic-circuit", amount = 1 },
     },
     results = {
       { type = "item", name = "sct-magenta-wire", amount = 1 },

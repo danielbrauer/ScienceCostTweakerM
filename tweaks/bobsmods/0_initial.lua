@@ -1,7 +1,6 @@
 require("science_bobmods_logistic")
 require("science_bobmods_tech")
 require("science_bobmods_alien")
-require("science_bobmods_burner")
 
 if mods["bobplates"] then
   -- Production Science Pack:

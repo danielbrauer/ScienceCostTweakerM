@@ -492,7 +492,7 @@ function sctm.recipe_ingredient_replace(recipename, oldingredient, newingredient
   if not newingredient.name then
     new = {}
     new.name = newingredient
-    new.type = data.raw.fluid[newnorm.name] and "fluid" or "item"
+    new.type = data.raw.fluid[newingredient] and "fluid" or "item"
     new.amount = 0
   end
   if data.raw.recipe[recipename] and (data.raw.item[new.name] or data.raw.fluid[new.name]) then
@@ -565,8 +565,8 @@ function sctm.hide_recipe(recipe_name)
   end
 end
 
-function sctm.add_additional_category(recipe_name, category)
-  if type(recipe_name) == "string" and type(category) == "string" then
+function sctm.add_additional_category(recipe_name, category_name)
+  if type(recipe_name) == "string" and type(category_name) == "string" then
     local recipe = data.raw.recipe[recipe_name]
     local category = data.raw["recipe-category"][category_name]
     if recipe and category then

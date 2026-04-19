@@ -263,6 +263,7 @@ if mods["bobtech"] then
         },
       },
     })
+    sctm.tech_dependency_add("sct-advanced-logistic-science-pack", "bob-gold-processing")
   else
     data:extend({
       {

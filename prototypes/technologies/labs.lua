@@ -142,6 +142,7 @@ data:extend({
       },
     },
     prerequisites = {
+      "oil-processing",
       "plastics",
       "sulfur-processing",
     },

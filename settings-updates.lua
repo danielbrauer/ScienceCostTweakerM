@@ -17,3 +17,5 @@ local function overwrite_setting(setting_type, setting_name, value)
     log("Error: missing setting type " .. setting_type)
   end
 end
+
+overwrite_setting("bool-setting", "bobmods-burnerphase", false)
