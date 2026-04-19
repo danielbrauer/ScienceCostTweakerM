@@ -1,8 +1,14 @@
 require("configs.costs.rawmodels")
 
-if not sct_cost then sct_cost = {} end
-if not sct_cost.uberwaffe then sct_cost.uberwaffe = {} end
-if not sct_cost.uberwaffe.costs then sct_cost.uberwaffe.costs = {} end
+if not sct_cost then
+  sct_cost = {}
+end
+if not sct_cost.uberwaffe then
+  sct_cost.uberwaffe = {}
+end
+if not sct_cost.uberwaffe.costs then
+  sct_cost.uberwaffe.costs = {}
+end
 
 -- =================================================================================================================================================================== --
 -- Cost Adjustments for the various tiers of research.
@@ -20,7 +26,6 @@ sct_cost.uberwaffe.costs.formula = SCT_formulaMod(1.0, "", "") -- No change
 sct_cost.uberwaffe.costs.bobmodules = SCT_newBobModules(1.0, 5.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) -- 5x overall more expensive
 -- SCT_newDarkMatter(timeMult, stepCountMult, tehemutMult, scoopMult, transducerMult, conduitMult)
 sct_cost.uberwaffe.costs.darkmatter = SCT_newDarkMatter(1.0, 2500.0, 1.0, 1.0, 1.0, 1.0) -- 2500x overall more expensive
-
 
 -- Personal Tweaking (UberTweaks Mod) of Bob's Module research replaces Module Case and Module Circuit with Science Pack 3 and Alien Science Packs.
 -- So add them into the table of ingredient cost multipliers.

@@ -1,8 +1,14 @@
 require("configs.costs.rawmodels")
 
-if not sct_cost then sct_cost = {} end
-if not sct_cost.normal then sct_cost.normal = {} end
-if not sct_cost.normal.costs then sct_cost.normal.costs = {} end
+if not sct_cost then
+  sct_cost = {}
+end
+if not sct_cost.normal then
+  sct_cost.normal = {}
+end
+if not sct_cost.normal.costs then
+  sct_cost.normal.costs = {}
+end
 
 -- =================================================================================================================================================================== --
 -- Cost Adjustments for the various tiers of research.

@@ -1,7 +1,7 @@
-require ("recipes.sciencepacks-intermediates")
-require ("recipes.sciencepacks")
-require ("recipes.labs-intermediates")
-require ("recipes.labs")
+require("recipes.sciencepacks-intermediates")
+require("recipes.sciencepacks")
+require("recipes.labs-intermediates")
+require("recipes.labs")
 
 local sciencepack1 = table.deepcopy(data.raw.recipe["sct-automation-science-pack"])
 sctm.hide_recipe("sct-automation-science-pack")
