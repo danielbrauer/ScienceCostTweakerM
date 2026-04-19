@@ -68,7 +68,7 @@ if settings.startup["sct-difficulty-cost"].value ~= "noadjustment" then
           -- Now adjust by the modifiers for this tier
           unitCopy.count = math.max(math.floor(unitCopy.count * multiplier.stepCount), 1)
 
-          for _, pack in ipairs(unitCopy.ingredients) do
+          for _, pack in pairs(unitCopy.ingredients) do
             -- For each type of science pack, multiply its count per research step by the given multiplier
             local packname = pack[1]
             local ingredientCostCount = pack[2]
@@ -91,7 +91,7 @@ if settings.startup["sct-difficulty-cost"].value ~= "noadjustment" then
               else
                 pack.amount = ingredientCostCount
               end
-              --            sctm.log(tech.name .. " multiplier applied " .. " (mult: " .. mult .. ", pack: " .. packname .. ", simplepack: " .. (simplepack and 'true' or 'false') .. ")")
+              --sctm.log(tech.name .. " multiplier applied " .. " (mult: " .. mult .. ", pack: " .. packname .. ", simplepack: " .. (simplepack and 'true' or 'false') .. ")")
             end
           end
         end
