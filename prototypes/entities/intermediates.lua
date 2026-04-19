@@ -208,7 +208,7 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/cyan-wire.png",
     subgroup = "sct-sciencepack-prod",
     order = "h[prod]-b[cyan-wire]",
-    stack_size = 200
+    stack_size = 200,
   },
 
   -- =============================
@@ -219,7 +219,7 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/magenta-wire.png",
     subgroup = "sct-sciencepack-prod",
     order = "h[prod]-c[cyan-wire]",
-    stack_size = 200
+    stack_size = 200,
   },
 
   {

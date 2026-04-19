@@ -65,14 +65,12 @@ if mods["angelsbioprocessing"] then
       enabled = false,
       always_show_made_in = true,
       energy_required = 5,
-      ingredients =
-      {
-        {type = "item", name = "sct-bio-ground-sample", amount = 1},
-        {type = "item", name = "angels-token-bio", amount = 1},
+      ingredients = {
+        { type = "item", name = "sct-bio-ground-sample", amount = 1 },
+        { type = "item", name = "angels-token-bio", amount = 1 },
       },
-      results = 
-      {
-        {type="item", name="sct-bio-science-pack", amount=1},
+      results = {
+        { type = "item", name = "sct-bio-science-pack", amount = 1 },
       },
     },
 
@@ -83,14 +81,12 @@ if mods["angelsbioprocessing"] then
       order = "d_a[bio]-b[groundsample]",
       enabled = false,
       energy_required = 5,
-      ingredients =
-      {
-        {type = "item", name = "sct-bio-sample-scaffold", amount = 1},
-        {type = "item", name = "sct-bio-sample-filling", amount = 1},
+      ingredients = {
+        { type = "item", name = "sct-bio-sample-scaffold", amount = 1 },
+        { type = "item", name = "sct-bio-sample-filling", amount = 1 },
       },
-      results = 
-      {
-        {type="item", name="sct-bio-ground-sample", amount=1},
+      results = {
+        { type = "item", name = "sct-bio-ground-sample", amount = 1 },
       },
     },
 
@@ -101,14 +97,12 @@ if mods["angelsbioprocessing"] then
       order = "d_a[bio]-c[scaffold]",
       enabled = false,
       energy_required = 2,
-      ingredients =
-      {
-        {type = "item", name = "wood", amount = 1},
-        {type = "item", name = "angels-solid-paper", amount = 2},
+      ingredients = {
+        { type = "item", name = "wood", amount = 1 },
+        { type = "item", name = "angels-solid-paper", amount = 2 },
       },
-      results = 
-      {
-        {type="item", name="sct-bio-sample-scaffold", amount=1},
+      results = {
+        { type = "item", name = "sct-bio-sample-scaffold", amount = 1 },
       },
     },
 
@@ -120,15 +114,13 @@ if mods["angelsbioprocessing"] then
       category = "angels-liquifying",
       enabled = false,
       energy_required = 2,
-      ingredients =
-      {
-        {type = "item", name = "angels-solid-soil", amount = 1},
-        {type = "item", name = "angels-solid-compost", amount = 2},
-        {type="fluid", name="water", amount=100},
+      ingredients = {
+        { type = "item", name = "angels-solid-soil", amount = 1 },
+        { type = "item", name = "angels-solid-compost", amount = 2 },
+        { type = "fluid", name = "water", amount = 100 },
       },
-      results = 
-      {
-        {type="item", name="sct-bio-sample-filling", amount=1},
+      results = {
+        { type = "item", name = "sct-bio-sample-filling", amount = 1 },
       },
     },
   })
@@ -158,15 +150,13 @@ if mods["angelsbioprocessing"] then
           recipe = "sct-bio-sample-filling",
         },
       },
-      prerequisites =
-      {
+      prerequisites = {
         "angels-gardens",
         "angels-bio-paper-1",
       },
       unit = {
         count = 60,
-        ingredients = 
-        {
+        ingredients = {
           { "automation-science-pack", 1 },
           { "logistic-science-pack", 1 },
         },

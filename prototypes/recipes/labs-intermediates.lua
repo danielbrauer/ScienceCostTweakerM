@@ -56,9 +56,9 @@ data:extend({
     },
     results = {
       { type = "item", name = "sct-lab2-automatization", amount = 1 },
-    }
+    },
   },
-  
+
   -- lab3 intermediates
   {
     type = "recipe",
@@ -101,7 +101,7 @@ data:extend({
       { type = "item", name = "sct-t3-sulfur-lightsource", amount = 1 },
     },
   },
-  
+
   -- lab4 intermediates
   {
     type = "recipe",

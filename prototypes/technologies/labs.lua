@@ -5,8 +5,7 @@ data:extend({
   {
     type = "technology",
     name = "sct-lab-t1",
-    icons = 
-    {
+    icons = {
       {
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-128.png",
         icon_size = 128,
@@ -16,8 +15,7 @@ data:extend({
         icon_size = 128,
       },
     },
-    effects = 
-    {
+    effects = {
       {
         type = "unlock-recipe",
         recipe = "lab",
@@ -35,13 +33,11 @@ data:extend({
         recipe = "iron-stick",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "electronics",
       "steam-power",
     },
-    research_trigger =
-    {
+    research_trigger = {
       type = "craft-item",
       item = "electronic-circuit",
       count = 10,
@@ -54,8 +50,7 @@ data:extend({
   {
     type = "technology",
     name = "sct-lab-t2",
-    icons = 
-    {
+    icons = {
       {
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t2/icon-128.png",
         icon_size = 128,
@@ -65,8 +60,7 @@ data:extend({
         icon_size = 128,
       },
     },
-    effects = 
-    {
+    effects = {
       {
         type = "unlock-recipe",
         recipe = "sct-lab-t2",
@@ -80,18 +74,15 @@ data:extend({
         recipe = "sct-lab2-automatization",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "fast-inserter",
       "steel-processing",
       "logistics",
     },
-    unit =
-    {
+    unit = {
       count = 30,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
       },
       time = 20,
     },
@@ -102,8 +93,7 @@ data:extend({
   {
     type = "technology",
     name = "sct-lab-t3",
-    icons = 
-    {
+    icons = {
       {
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t3/icon-128.png",
         icon_size = 128,
@@ -113,8 +103,7 @@ data:extend({
         icon_size = 128,
       },
     },
-    effects = 
-    {
+    effects = {
       {
         type = "unlock-recipe",
         recipe = "sct-lab-t3",
@@ -152,18 +141,15 @@ data:extend({
         recipe = "sct-t3-flash-fuel",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "plastics",
       "sulfur-processing",
     },
-    unit =
-    {
+    unit = {
       count = 45,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
       },
       time = 30,
     },
@@ -175,8 +161,7 @@ data:extend({
   {
     type = "technology",
     name = "sct-lab-t4",
-    icons = 
-    {
+    icons = {
       {
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t4/icon-128.png",
         icon_size = 128,
@@ -186,8 +171,7 @@ data:extend({
         icon_size = 128,
       },
     },
-    effects = 
-    {
+    effects = {
       {
         type = "unlock-recipe",
         recipe = "sct-lab-t4",
@@ -205,21 +189,18 @@ data:extend({
         recipe = "sct-htech-injector",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "processing-unit",
       "uranium-processing",
       "bulk-inserter",
-      "low-density-structure"
+      "low-density-structure",
     },
-    unit =
-    {
+    unit = {
       count = 60,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
       },
       time = 40,
     },

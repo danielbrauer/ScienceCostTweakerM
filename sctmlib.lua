@@ -118,19 +118,33 @@ function sctm.tech_dependency_add(techname, depname, hidden)
   local added = false
   local addhidden = hidden or false
   sctm.debug("insert dep " .. depname .. " into " .. techname)
-  if data.raw.technology[techname] and (data.raw.technology[techname].enabled or true) and not (data.raw.technology[techname].hidden or false) and 
-    data.raw.technology[depname] and (data.raw.technology[depname].enabled or true) and (not (data.raw.technology[depname].hidden or false) or addhidden) then
+  if
+    data.raw.technology[techname]
+    and (data.raw.technology[techname].enabled or true)
+    and not (data.raw.technology[techname].hidden or false)
+    and data.raw.technology[depname]
+    and (data.raw.technology[depname].enabled or true)
+    and (not (data.raw.technology[depname].hidden or false) or addhidden)
+  then
     local tech = data.raw.technology[techname]
     if not tech.prerequisites then
       tech.prerequisites = {}
     end
     added = addprereq(tech.prerequisites, depname)
   end
-  --sctm.debug(techname .. ":" .. serpent.block(data.raw.technology[techname])) 
-  if not data.raw.technology[techname] or not (data.raw.technology[techname].enabled or true) or (data.raw.technology[techname].hidden or false) then
+  --sctm.debug(techname .. ":" .. serpent.block(data.raw.technology[techname]))
+  if
+    not data.raw.technology[techname]
+    or not (data.raw.technology[techname].enabled or true)
+    or (data.raw.technology[techname].hidden or false)
+  then
     sctm.debug("attempting to update nonexistent or disabled technology " .. techname)
   end
-  if not data.raw.technology[depname] or not (data.raw.technology[depname].enabled or true) or not (not (data.raw.technology[depname].hidden or false) or addhidden) then
+  if
+    not data.raw.technology[depname]
+    or not (data.raw.technology[depname].enabled or true)
+    or not (not (data.raw.technology[depname].hidden or false) or addhidden)
+  then
     sctm.debug("attempting to insert nonexistent or disabled technology " .. depname)
   end
   return added
@@ -154,8 +168,8 @@ end
 local function rempack(ingredientstable, packname)
   local removed = false
   for _i, pack in pairs(ingredientstable) do
-    if pack and (pack[1] == packname or (pack.name and pack.name == packname))then
-      table.remove(ingredientstable,_i)
+    if pack and (pack[1] == packname or (pack.name and pack.name == packname)) then
+      table.remove(ingredientstable, _i)
       removed = true
       break
     end
@@ -169,7 +183,7 @@ function sctm.tech_pack_remove(techname, packname)
   if data.raw.technology[techname] then
     local tech = data.raw.technology[techname]
     if tech.unit and tech.unit.ingredients then
-      removed = rempack(tech.unit.ingredients, packname) 
+      removed = rempack(tech.unit.ingredients, packname)
     end
   end
   if not data.raw.technology[techname] then
@@ -183,7 +197,7 @@ local function addpack(ingredientstable, newpack)
   local added = false
   local found = false
   for _i, pack in pairs(ingredientstable) do
-    if pack and (pack[1] == newpack[1])then
+    if pack and (pack[1] == newpack[1]) then
       found = true
       break
     end
@@ -205,7 +219,7 @@ function sctm.tech_pack_add(techname, sciencepack)
       if not tech.unit.ingredients then
         tech.unit.ingredients = {}
       end
-      added = addpack(tech.unit.ingredients, sciencepack) 
+      added = addpack(tech.unit.ingredients, sciencepack)
     end
   end
   if not data.raw.technology[techname] then
@@ -240,7 +254,7 @@ function sctm.tech_pack_replace(techname, oldpackname, newpackname)
   if data.raw.technology[techname] and data.raw.tool[newpackname] then
     local tech = data.raw.technology[techname]
     if tech.unit and tech.unit.ingredients then
-      replaced = replacepack(tech.unit.ingredients, oldpackname, newpackname) 
+      replaced = replacepack(tech.unit.ingredients, oldpackname, newpackname)
     end
   end
   if not data.raw.technology[techname] then
@@ -326,7 +340,7 @@ local function removeknownpacks(effectstable, packtable, techname)
           removedone = true
         end
       end
-      if not removedone and name:find("science-pack",1,true) ~= nil and name:find("alien",1,true) == nil then
+      if not removedone and name:find("science-pack", 1, true) ~= nil and name:find("alien", 1, true) == nil then
         sctm.log("Found unknown science pack '" .. name .. "', unlocked by '" .. techname .. "'")
       end
       removed = removed or removedone
@@ -354,11 +368,10 @@ function sctm.tech_replace(oldtechname, newtechname)
   if data.raw.technology[oldtechname] and data.raw.technology[newtechname] then
     local oldtech = data.raw.technology[oldtechname]
     local newtech = data.raw.technology[newtechname]
-    
 
     if oldtech.effects then
       for _, eff in pairs(oldtech.effects) do
-        if (not sctm.find_in_table(newtech.effects, eff)) then
+        if not sctm.find_in_table(newtech.effects, eff) then
           local effectsize = table_size(newtech.effects)
           newtech.effects[effectsize + 1] = eff
         end
@@ -461,8 +474,8 @@ end
 local function replaceingredient(ingredientstable, oldingredient, newingredient)
   local added = false
   for _i, ingredient in pairs(ingredientstable) do
-    if ingredient.name == oldingredient then      
-      if (newingredient.amount == 0) then
+    if ingredient.name == oldingredient then
+      if newingredient.amount == 0 then
         newingredient.amount = ingredient.amount
       end
       ingredientstable[_i] = newingredient
@@ -486,7 +499,7 @@ function sctm.recipe_ingredient_replace(recipename, oldingredient, newingredient
     local recipe = data.raw.recipe[recipename]
     if recipe.ingredients then
       replaced = replaceingredient(recipe.ingredients, oldingredient, new)
-    end   
+    end
   end
   if not data.raw.recipe[recipename] then
     sctm.debug("attempting to update nonexistent recipe " .. recipename)
@@ -501,7 +514,7 @@ local function replaceresult(resultstable, oldresult, newresult)
   local added = false
   for _i, result in pairs(resultstable) do
     if result.name == oldresult then
-      if (newresult.amount == 0) then
+      if newresult.amount == 0 then
         newresult.amount = result.amount
       end
       resultstable[_i] = newresult

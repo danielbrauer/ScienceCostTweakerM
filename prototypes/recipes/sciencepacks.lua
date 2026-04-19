@@ -3,50 +3,46 @@
 
 -- Science Pack 1
 -- ===================================================================
-data:extend(
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-automation-science-pack",
-      subgroup = "sct-sciencepack-1",
-      order = "d[t1]-a[automation-science-pack]",
-      enabled = false,
-      always_show_made_in = true,
-      allow_productivity = true,
-      ingredients = {
-        { type = "item", name = "sct-t1-ironcore", amount = 1 },
-        { type = "item", name = "sct-t1-magnet-coils", amount = 2 },
-      },
-      results = {
-        { type = "item", amount = 1, name = "automation-science-pack" },
-      },
-      energy_required = 5
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-automation-science-pack",
+    subgroup = "sct-sciencepack-1",
+    order = "d[t1]-a[automation-science-pack]",
+    enabled = false,
+    always_show_made_in = true,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "sct-t1-ironcore", amount = 1 },
+      { type = "item", name = "sct-t1-magnet-coils", amount = 2 },
+    },
+    results = {
+      { type = "item", amount = 1, name = "automation-science-pack" },
+    },
+    energy_required = 5,
+  },
+})
 -- Science Pack 2
 -- ===================================================================
-data:extend(
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-logistic-science-pack",
-      subgroup = "sct-sciencepack-2",
-      order = "e[t2]-a[logistic-science-pack]",
-      enabled = false,
-      always_show_made_in = true,
-      allow_productivity = true,
-      ingredients = {
-        { type = "item", name = "sct-t2-instruments", amount = 1 },
-        { type = "item", name = "sct-t2-reaction-nodes", amount = 1 },
-      },
-      results = {
-        { type = "item", amount = 1, name = "logistic-science-pack" },
-      },
-      energy_required = 6,
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-logistic-science-pack",
+    subgroup = "sct-sciencepack-2",
+    order = "e[t2]-a[logistic-science-pack]",
+    enabled = false,
+    always_show_made_in = true,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "sct-t2-instruments", amount = 1 },
+      { type = "item", name = "sct-t2-reaction-nodes", amount = 1 },
+    },
+    results = {
+      { type = "item", amount = 1, name = "logistic-science-pack" },
+    },
+    energy_required = 6,
+  },
+})
 -- Science Pack 3
 -- ===================================================================
 --[[
@@ -63,28 +59,27 @@ data:extend(
   Note: Circuit = 1x Iron + 1.5x Copper
   Note: Adv Circuit = 2x Iron + 5x Copper + 2x Plastic
   Note: Engine = 1x Steel, 4x Iron
-]]--
-data:extend(
+]]
+--
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-chemical-science-pack",
-      subgroup = "sct-sciencepack-3",
-      order = "f[t3]-a[chemical-science-pack]",
-      enabled = false,
-      always_show_made_in = true,
-      allow_productivity = true,
-      ingredients = {
-        { type = "item", name = "sct-t3-femto-lasers", amount = 1 },
-        { type = "item", name = "sct-t3-atomic-sensors", amount = 1 },
-      },
-      results = {
-        { type = "item", amount = 1, name = "chemical-science-pack" },
-      },
-      energy_required = 10,
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-chemical-science-pack",
+    subgroup = "sct-sciencepack-3",
+    order = "f[t3]-a[chemical-science-pack]",
+    enabled = false,
+    always_show_made_in = true,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "sct-t3-femto-lasers", amount = 1 },
+      { type = "item", name = "sct-t3-atomic-sensors", amount = 1 },
+    },
+    results = {
+      { type = "item", amount = 1, name = "chemical-science-pack" },
+    },
+    energy_required = 10,
+  },
+})
 -- Military Science Pack
 -- ===================================================================
 --[[
@@ -98,28 +93,27 @@ data:extend(
       => 39x Iron, 28x Copper, 1x Steel, 5x Coal
     Refunds: 14x Iron, 20x Copper = 14x Mixed + 3x Copper
     
-]]--
-data:extend(
+]]
+--
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-military-science-pack",
-      enabled = false,
-      always_show_made_in = true,
-      allow_productivity = true,
-      ingredients = {
-        { type = "item", name = "sct-mil-circuit3", amount = 1 },
-        { type = "item", name = "sct-mil-plating", amount = 1 },
-      },
-      results = {
-        { type = "item", amount = 2, name = "military-science-pack" },
-      },
-      energy_required = 10,
-      subgroup = "sct-sciencepack-mil",
-      order = "g[mil]-a[military-science-pack]"
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-military-science-pack",
+    enabled = false,
+    always_show_made_in = true,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "sct-mil-circuit3", amount = 1 },
+      { type = "item", name = "sct-mil-plating", amount = 1 },
+    },
+    results = {
+      { type = "item", amount = 2, name = "military-science-pack" },
+    },
+    energy_required = 10,
+    subgroup = "sct-sciencepack-mil",
+    order = "g[mil]-a[military-science-pack]",
+  },
+})
 -- Production Science Pack
 -- ===================================================================
 --[[
@@ -133,28 +127,27 @@ data:extend(
       => 50x Iron, 43x Copper, 15x Steel, 20x Stone, 10x Plastic, 20x Petroleum, 120x Water, 1x Electric Engine
     Refunds: 5x Iron, 11x Copper = 5x Mixed + 3x Copper
     
-]]--
-data:extend(
+]]
+--
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-production-science-pack",
-      enabled = false,
-      always_show_made_in = true,
-      allow_productivity = true,
-      ingredients = {
-        { type = "item", name = "sct-prod-bioprocessor", amount = 1 },
-        { type = "item", name = "sct-prod-overclocker", amount = 1 },
-      },
-      results = {
-        { type = "item", amount = 2, name = "production-science-pack" },
-      },
-      energy_required = 14,
-      subgroup = "sct-sciencepack-prod",
-      order = "h[prod]-a[production-science-pack]"
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-production-science-pack",
+    enabled = false,
+    always_show_made_in = true,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "sct-prod-bioprocessor", amount = 1 },
+      { type = "item", name = "sct-prod-overclocker", amount = 1 },
+    },
+    results = {
+      { type = "item", amount = 2, name = "production-science-pack" },
+    },
+    energy_required = 14,
+    subgroup = "sct-sciencepack-prod",
+    order = "h[prod]-a[production-science-pack]",
+  },
+})
 -- High Tech Science Pack
 -- ===================================================================
 --[[
@@ -168,26 +161,25 @@ data:extend(
       => 
     Refunds: 15x Iron, 17x Copper = 15x Mixed + 1x Copper
     
-]]--
-data:extend(
+]]
+--
+data:extend({
   {
-    {
-      type = "recipe",
-      name = "sct-utility-science-pack",
-      always_show_made_in = true,
-      allow_productivity = true,
-      enabled = false,
-      ingredients = {
-        { type = "item", name = "sct-htech-capbank", amount = 1 },
-        { type = "item", name = "sct-htech-injector", amount = 1 },
-        { type = "item", name = "sct-htech-random", amount = 1 },
-      },
-      results = {
-        { type = "item", amount = 2, name = "utility-science-pack" },
-      },
-      energy_required = 14,
-      subgroup = "sct-sciencepack-hightech",
-      order = "i[ht]-a[ht-science-pack]"
-    }
-  }
-)
+    type = "recipe",
+    name = "sct-utility-science-pack",
+    always_show_made_in = true,
+    allow_productivity = true,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "sct-htech-capbank", amount = 1 },
+      { type = "item", name = "sct-htech-injector", amount = 1 },
+      { type = "item", name = "sct-htech-random", amount = 1 },
+    },
+    results = {
+      { type = "item", amount = 2, name = "utility-science-pack" },
+    },
+    energy_required = 14,
+    subgroup = "sct-sciencepack-hightech",
+    order = "i[ht]-a[ht-science-pack]",
+  },
+})

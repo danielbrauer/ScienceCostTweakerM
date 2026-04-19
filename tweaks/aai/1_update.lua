@@ -63,20 +63,24 @@ if mods["aai-industry"] then
     sctm.tech_dependency_add("sct-lab-t1", "basic-logistics")
   end
 
-	if not mods["boblogistics"] or not settings.startup["bobmods-logistics-beltoverhaul"] or not settings.startup["bobmods-logistics-beltoverhaul"].value then
-		sctm.tech_dependency_add("sct-lab-t1", "bob-basic-logistics")
-	end
-	
-	if mods["angelsrefining"] then
-		sctm.recipe_ingredient_replace("sct-t0-crate", "stone", "angels-stone-crushed")
-		sctm.recipe_ingredient_replace("sct-t0-solvent", "iron-ore", "angels-ore1-crushed")
-	end
+  if
+    not mods["boblogistics"]
+    or not settings.startup["bobmods-logistics-beltoverhaul"]
+    or not settings.startup["bobmods-logistics-beltoverhaul"].value
+  then
+    sctm.tech_dependency_add("sct-lab-t1", "bob-basic-logistics")
+  end
 
-	if mods["omnimatter"] then
-		sctm.recipe_ingredient_replace("sct-t0-solvent", "iron-ore", "crushed-omnite")
-	end
-	
-	if mods["omnimatter_wood"] then
-		sctm.recipe_ingredient_replace("sct-t0-solvent", "wood", "omniwood")
-	end
+  if mods["angelsrefining"] then
+    sctm.recipe_ingredient_replace("sct-t0-crate", "stone", "angels-stone-crushed")
+    sctm.recipe_ingredient_replace("sct-t0-solvent", "iron-ore", "angels-ore1-crushed")
+  end
+
+  if mods["omnimatter"] then
+    sctm.recipe_ingredient_replace("sct-t0-solvent", "iron-ore", "crushed-omnite")
+  end
+
+  if mods["omnimatter_wood"] then
+    sctm.recipe_ingredient_replace("sct-t0-solvent", "wood", "omniwood")
+  end
 end

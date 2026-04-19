@@ -61,14 +61,14 @@ if settings.startup["sct-difficulty-cost"].value ~= "noadjustment" then
         local unitCopy = table.deepcopy(tech.unit)
 
         unitCopy.time = math.max(unitCopy.time * multiplier.time, 1)
-          
+
         -- Now, since infinite research follows a slightly different layout, we have to account for that here.
         -- Only adjust the count if it has a count field
         if unitCopy.count ~= nil then
           -- Now adjust by the modifiers for this tier
           unitCopy.count = math.max(math.floor(unitCopy.count * multiplier.stepCount), 1)
-        
-          for _, pack in ipairs( unitCopy.ingredients ) do
+
+          for _, pack in ipairs(unitCopy.ingredients) do
             -- For each type of science pack, multiply its count per research step by the given multiplier
             local packname = pack[1]
             local ingredientCostCount = pack[2]
@@ -81,26 +81,26 @@ if settings.startup["sct-difficulty-cost"].value ~= "noadjustment" then
 
             if multiplier.cost[packname] then
               local mult = 1
-              
+
               mult = multiplier.cost[packname]
               ingredientCostCount = math.floor(ingredientCostCount * mult)
               ingredientCostCount = math.max(ingredientCostCount, 1)
-              
+
               if simplepack then
                 pack[2] = ingredientCostCount
               else
                 pack.amount = ingredientCostCount
               end
-  --            sctm.log(tech.name .. " multiplier applied " .. " (mult: " .. mult .. ", pack: " .. packname .. ", simplepack: " .. (simplepack and 'true' or 'false') .. ")")
+              --            sctm.log(tech.name .. " multiplier applied " .. " (mult: " .. mult .. ", pack: " .. packname .. ", simplepack: " .. (simplepack and 'true' or 'false') .. ")")
             end
           end
         end
-        
+
         -- If the tech uses a count formulae instead, then adjust the formula by wrapping it in our added strings
         if unitCopy.count_formula ~= nil then
           unitCopy.count_formula = multiplier.prefix .. unitCopy.count_formula .. multiplier.postfix
         end
-        
+
         tech.unit = unitCopy
       end
     end

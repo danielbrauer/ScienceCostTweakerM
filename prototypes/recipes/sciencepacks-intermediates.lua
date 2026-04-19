@@ -56,14 +56,14 @@ data:extend({
     type = "recipe",
     name = "sct-t1-ironcore",
     subgroup = "sct-sciencepack-1",
-    order = "d[t1]-b[ironcore]",    
+    order = "d[t1]-b[ironcore]",
     enabled = false,
     energy_required = 1.25,
     ingredients = {
       { type = "item", name = "iron-plate", amount = 2 },
     },
     results = {
-      { type = "item", name="sct-t1-ironcore", amount = 1 },
+      { type = "item", name = "sct-t1-ironcore", amount = 1 },
     },
   },
 
@@ -81,7 +81,7 @@ data:extend({
       { type = "item", name = "sct-t1-magnet-coils", amount = 8 },
     },
   },
-  
+
   -- Tier 2 Intermediary products.
   -- =============================
   -- Vanilla Tier 2 Science Pack:
@@ -120,7 +120,7 @@ data:extend({
       { type = "item", name = "sct-t2-micro-wafer", amount = 1 },
     },
     results = {
-      { type = "item", name="sct-t2-microcircuits", amount = 10 },
+      { type = "item", name = "sct-t2-microcircuits", amount = 10 },
     },
   },
 
@@ -145,18 +145,16 @@ data:extend({
     name = "sct-t2-wafer-stamp",
     subgroup = "sct-sciencepack-2",
     order = "e[t2]-e[wafer-stamp]",
-    enabled = false,    
+    enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "iron-plate", amount = 4 },
     },
-    results = 
-    {
-      { type = "item", name="sct-t2-wafer-stamp", amount = 4 },
+    results = {
+      { type = "item", name = "sct-t2-wafer-stamp", amount = 4 },
     },
   },
-  
+
   {
     type = "recipe",
     name = "sct-t2-reaction-nodes",
@@ -164,17 +162,15 @@ data:extend({
     order = "e[t2]-f[reaction-nodes]",
     enabled = false,
     energy_required = 1.5,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-t1-magnet-coils", amount = 2 },
       { type = "item", name = "iron-plate", amount = 1 },
     },
-    results = 
-    {
-      { type = "item", name="sct-t2-reaction-nodes", amount = 1 },
+    results = {
+      { type = "item", name = "sct-t2-reaction-nodes", amount = 1 },
     },
   },
-  
+
   -- Tier 3 Intermediary products.
   -- =============================
   {
@@ -182,22 +178,20 @@ data:extend({
     name = "sct-t3-femto-lasers",
     category = "crafting-with-fluid",
     subgroup = "sct-sciencepack-3",
-    order = "f[t3]-b[femtolasers]",   
+    order = "f[t3]-b[femtolasers]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-t3-laser-emitter", amount = 1 },
       { type = "item", name = "sct-t3-laser-foci", amount = 1 },
       { type = "item", name = "sct-t3-flash-fuel", amount = 1 },
       { type = "fluid", name = "water", amount = 10 },
     },
-    results = 
-    {
-      {type = "item", name = "sct-t3-femto-lasers", amount = 1 },
+    results = {
+      { type = "item", name = "sct-t3-femto-lasers", amount = 1 },
     },
   },
-  
+
   {
     type = "recipe",
     name = "sct-t3-flash-fuel",
@@ -207,13 +201,11 @@ data:extend({
     order = "f[t3]-c[flashfuel]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "fluid", name = "petroleum-gas", amount = 20 },
       { type = "item", name = "steel-plate", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-t3-flash-fuel", amount = 1 },
     },
   },
@@ -225,13 +217,11 @@ data:extend({
     order = "f[t3]-d[laserfoci]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "copper-plate", amount = 4 },
       { type = "item", name = "iron-plate", amount = 6 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-t3-laser-foci", amount = 1 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
@@ -245,14 +235,12 @@ data:extend({
     order = "f[t3]-e[laseremitter]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "electronic-circuit", amount = 6 },
       { type = "item", name = "copper-plate", amount = 2 },
       { type = "item", name = "iron-plate", amount = 2 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-t3-laser-emitter", amount = 1 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
@@ -267,21 +255,19 @@ data:extend({
     order = "f[t3]-f[atomicsensors]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "advanced-circuit", amount = 1 },
       { type = "item", name = "iron-plate", amount = 12 },
       { type = "item", name = "sct-t1-magnet-coils", amount = 22 },
       { type = "fluid", name = "water", amount = 20 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-t3-atomic-sensors", amount = 1 },
       { type = "item", name = "sct-waste-copperonly", amount = 2 },
     },
     main_product = "sct-t3-atomic-sensors",
   },
-  
+
   -- Military Intermediary products.
   -- =============================
   {
@@ -292,17 +278,15 @@ data:extend({
     order = "g[mil]-b[plating]",
     enabled = false,
     energy_required = 9,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "steel-plate", amount = 1 },
       { type = "item", name = "iron-plate", amount = 6 },
       { type = "item", name = "sct-mil-subplating", amount = 7 },
       { type = "item", name = "copper-plate", amount = 2 },
     },
-    results = 
-    {
-      {type = "item", name = "sct-mil-plating", amount = 1 },
-      {type = "item", name = "sct-waste-ironcopper", amount = 1 },
+    results = {
+      { type = "item", name = "sct-mil-plating", amount = 1 },
+      { type = "item", name = "sct-waste-ironcopper", amount = 1 },
     },
     main_product = "sct-mil-plating",
   },
@@ -314,13 +298,11 @@ data:extend({
     order = "g[mil]-c[subplating]",
     enabled = false,
     energy_required = 1,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "iron-plate", amount = 3 },
       { type = "item", name = "copper-plate", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-mil-subplating", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 1 },
     },
@@ -335,20 +317,18 @@ data:extend({
     order = "g[mil]-d[circuit3]",
     enabled = false,
     energy_required = 3,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-mil-circuit2", amount = 1 },
       { type = "item", name = "advanced-circuit", amount = 2 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-mil-circuit3", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 2 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
     main_product = "sct-mil-circuit3",
   },
-  
+
   {
     type = "recipe",
     name = "sct-mil-circuit2",
@@ -356,20 +336,18 @@ data:extend({
     order = "g[mil]-e[circuit2]",
     enabled = false,
     energy_required = 2,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-mil-circuit1", amount = 1 },
       { type = "item", name = "electronic-circuit", amount = 2 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-mil-circuit2", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 2 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
     main_product = "sct-mil-circuit2",
   },
-  
+
   {
     type = "recipe",
     name = "sct-mil-circuit1",
@@ -377,13 +355,11 @@ data:extend({
     order = "g[mil]-f[circuit1]",
     enabled = false,
     energy_required = 1,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "electronic-circuit", amount = 2 },
       { type = "item", name = "coal", amount = 5 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-mil-circuit1", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 1 },
     },
@@ -400,12 +376,10 @@ data:extend({
     order = "h[prod]-b[cyan-wire]",
     enabled = false,
     energy_required = 15,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "copper-cable", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-cyan-wire", amount = 1 },
     },
   },
@@ -417,12 +391,10 @@ data:extend({
     order = "h[prod]-c[magenta-wire]",
     enabled = false,
     energy_required = 15,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "copper-cable", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-magenta-wire", amount = 1 },
     },
   },
@@ -434,14 +406,12 @@ data:extend({
     order = "h[prod]-d[bioprocessor]",
     enabled = false,
     energy_required = 15,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-prod-baked-biopaste", amount = 1 },
       { type = "item", name = "sct-magenta-wire", amount = 6 },
       { type = "item", name = "processing-unit", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-prod-bioprocessor", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 4 },
     },
@@ -457,16 +427,14 @@ data:extend({
     always_show_made_in = true,
     energy_required = 5,
     enabled = false,
-    ingredients = 
-    {
+    ingredients = {
       { type = "item", name = "sct-prod-biosilicate", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-prod-baked-biopaste", amount = 1 },
     },
   },
-  
+
   {
     type = "recipe",
     name = "sct-prod-biosilicate",
@@ -476,16 +444,14 @@ data:extend({
     always_show_made_in = true,
     enabled = false,
     energy_required = 5,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "stone", amount = 20 },
       { type = "item", name = "steel-plate", amount = 8 },
       { type = "item", name = "plastic-bar", amount = 4 },
       { type = "item", name = "electronic-circuit", amount = 2 },
       { type = "fluid", name = "petroleum-gas", amount = 20 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-prod-biosilicate", amount = 1 },
     },
   },
@@ -498,23 +464,21 @@ data:extend({
     order = "h[prod]-g[overclocker]",
     enabled = false,
     energy_required = 15,
-    ingredients =
-    {
-      { type = "item", name = "iron-gear-wheel", amount= 17 },
+    ingredients = {
+      { type = "item", name = "iron-gear-wheel", amount = 17 },
       { type = "item", name = "copper-cable", amount = 16 },
       { type = "item", name = "steel-plate", amount = 9 },
       { type = "item", name = "sct-prod-chipcase", amount = 1 },
       { type = "fluid", name = "water", amount = 120 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-prod-overclocker", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 2 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
     main_product = "sct-prod-overclocker",
   },
-  
+
   {
     type = "recipe",
     name = "sct-prod-chipcase",
@@ -523,24 +487,22 @@ data:extend({
     order = "h[prod]-h[chipcase]",
     enabled = false,
     energy_required = 5,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "plastic-bar", amount = 5 },
       { type = "item", name = "sct-cyan-wire", amount = 5 },
       { type = "item", name = "advanced-circuit", amount = 1 },
       { type = "fluid", name = "heavy-oil", amount = 120 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-prod-chipcase", amount = 1 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
     },
     main_product = "sct-prod-chipcase",
   },
-  
+
   -- High-Tech Intermediary products.
   -- =============================
-  
+
   {
     type = "recipe",
     name = "sct-htech-capbank",
@@ -549,20 +511,18 @@ data:extend({
     order = "i[ht]-b[capbank]",
     enabled = false,
     energy_required = 14,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "battery", amount = 1 },
       { type = "item", name = "iron-plate", amount = 10 },
       { type = "item", name = "copper-cable", amount = 15 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-htech-capbank", amount = 1 },
       { type = "item", name = "sct-waste-ironcopper", amount = 2 },
     },
     main_product = "sct-htech-capbank",
   },
-  
+
   {
     type = "recipe",
     name = "sct-htech-injector",
@@ -571,21 +531,19 @@ data:extend({
     order = "i[ht]-c[injector]",
     enabled = false,
     energy_required = 7,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "processing-unit", amount = 3 },
       { type = "item", name = "plastic-bar", amount = 10 },
       { type = "item", name = "iron-plate", amount = 15 },
       { type = "item", name = "copper-cable", amount = 30 },
     },
-    results = 
-    {
-      { type = "item", name="sct-htech-injector", amount = 1 },
-      { type = "item", name="sct-waste-ironcopper", amount = 2 },
+    results = {
+      { type = "item", name = "sct-htech-injector", amount = 1 },
+      { type = "item", name = "sct-waste-ironcopper", amount = 2 },
     },
     main_product = "sct-htech-injector",
   },
-  
+
   {
     type = "recipe",
     name = "sct-htech-random",
@@ -594,13 +552,11 @@ data:extend({
     order = "i[ht]-d[random]",
     enabled = false,
     energy_required = 7,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "sct-htech-thermalstore-heated", amount = 1 },
       { type = "item", name = "iron-gear-wheel", amount = 5 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-htech-random", amount = 1 },
     },
   },
@@ -613,17 +569,15 @@ data:extend({
     order = "i[ht]-e[thermalstore-heated]",
     energy_required = 10.5,
     enabled = false,
-    ingredients = 
-    {
+    ingredients = {
       { type = "item", name = "sct-htech-thermalstore", amount = 1 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-htech-thermalstore-heated", amount = 1 },
     },
     always_show_made_in = true,
   },
-  
+
   {
     type = "recipe",
     name = "sct-htech-thermalstore",
@@ -632,15 +586,13 @@ data:extend({
     order = "i[ht]-f[thermalstore]",
     enabled = false,
     energy_required = 7,
-    ingredients =
-    {
+    ingredients = {
       { type = "item", name = "copper-plate", amount = 40 },
     },
-    results = 
-    {
+    results = {
       { type = "item", name = "sct-htech-thermalstore", amount = 1 },
       { type = "item", name = "sct-waste-copperonly", amount = 1 },
-    },      
+    },
     main_product = "sct-htech-thermalstore",
-  },    
+  },
 })

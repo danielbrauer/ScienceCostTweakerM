@@ -17,14 +17,14 @@ if mods["bobtech"] then
       icon = "__ScienceCostTweakerM__/graphics/bobmods/logistic-science-pack-128.png",
       icon_size = 128,
       essential = true,
-      effects =
-      {
---[[      
+      effects = {
+        --[[      
         {
           type = "unlock-recipe",
           recipe = "advanced-logistic-science-pack",
         },
-]]--
+]]
+        --
         {
           type = "unlock-recipe",
           recipe = "sct-logistic-cargo-unit",
@@ -113,14 +113,12 @@ if mods["bobtech"] then
       always_show_made_in = true,
       allow_productivity = true,
       energy_required = 14,
-      ingredients = 
-      {
-        { type="item", name="sct-logistic-cargo-unit", amount=1 },
-        { type="item", name="sct-logistic-memory-unit", amount=1 },
+      ingredients = {
+        { type = "item", name = "sct-logistic-cargo-unit", amount = 1 },
+        { type = "item", name = "sct-logistic-memory-unit", amount = 1 },
       },
-      results =
-      {
-        { type="item", name="bob-advanced-logistic-science-pack", amount=2 },
+      results = {
+        { type = "item", name = "bob-advanced-logistic-science-pack", amount = 2 },
       },
     },
   })
@@ -134,14 +132,12 @@ if mods["bobtech"] then
       order = "h_a[logistic]-b[cargo]",
       enabled = false,
       energy_required = 3,
-      ingredients =
-      {
-        {type = "item", name = "sct-logistic-unimover", amount = 1},
-        {type = "item", name = "sct-logistic-automated-storage", amount = 1},
+      ingredients = {
+        { type = "item", name = "sct-logistic-unimover", amount = 1 },
+        { type = "item", name = "sct-logistic-automated-storage", amount = 1 },
       },
-      results = 
-      {
-        {type="item", name="sct-logistic-cargo-unit", amount=1},
+      results = {
+        { type = "item", name = "sct-logistic-cargo-unit", amount = 1 },
       },
     },
   })
@@ -155,16 +151,14 @@ if mods["bobtech"] then
         order = "h_a[logistic]-d[storage]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "bob-titanium-gear-wheel", amount = 3},
-          {type = "item", name = "bob-cobalt-steel-bearing-ball", amount = 3},
-          {type = "item", name = "processing-unit", amount = 1},
-          {type = "item", name = "bob-brass-alloy", amount = 2},
+        ingredients = {
+          { type = "item", name = "bob-titanium-gear-wheel", amount = 3 },
+          { type = "item", name = "bob-cobalt-steel-bearing-ball", amount = 3 },
+          { type = "item", name = "processing-unit", amount = 1 },
+          { type = "item", name = "bob-brass-alloy", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-automated-storage", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-automated-storage", amount = 1 },
         },
       },
     })
@@ -178,17 +172,15 @@ if mods["bobtech"] then
         category = "crafting-with-fluid",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "advanced-circuit", amount = 4},
-          {type = "item", name = "bob-titanium-bearing-ball", amount = 6},
-          {type = "item", name = "bob-cobalt-steel-gear-wheel", amount = 6},
-          {type = "item", name = "bob-aluminium-plate", amount = 8},
-          {type="fluid", name="lubricant",amount=20}
+        ingredients = {
+          { type = "item", name = "advanced-circuit", amount = 4 },
+          { type = "item", name = "bob-titanium-bearing-ball", amount = 6 },
+          { type = "item", name = "bob-cobalt-steel-gear-wheel", amount = 6 },
+          { type = "item", name = "bob-aluminium-plate", amount = 8 },
+          { type = "fluid", name = "lubricant", amount = 20 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-unimover", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-unimover", amount = 1 },
         },
       },
     })
@@ -203,14 +195,12 @@ if mods["bobtech"] then
         order = "h_a[logistic]-d[storage]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "fast-inserter", amount = 1},
-          {type = "item", name = "steel-chest", amount = 2},
+        ingredients = {
+          { type = "item", name = "fast-inserter", amount = 1 },
+          { type = "item", name = "steel-chest", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-automated-storage", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-automated-storage", amount = 1 },
         },
       },
     })
@@ -223,14 +213,12 @@ if mods["bobtech"] then
         order = "h_a[logistic]-c[unimover]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "flying-robot-frame", amount = 1},
-          {type = "item", name = "express-transport-belt", amount = 2},
+        ingredients = {
+          { type = "item", name = "flying-robot-frame", amount = 1 },
+          { type = "item", name = "express-transport-belt", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-unimover", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-unimover", amount = 1 },
         },
       },
     })
@@ -247,14 +235,12 @@ if mods["bobtech"] then
         order = "h_a[logistic]-e[memory-unit]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "arithmetic-combinator", amount = 1},
-          {type = "item", name = "constant-combinator", amount = 2},
+        ingredients = {
+          { type = "item", name = "arithmetic-combinator", amount = 1 },
+          { type = "item", name = "constant-combinator", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-memory-unit", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-memory-unit", amount = 1 },
         },
       },
     })
@@ -267,15 +253,13 @@ if mods["bobtech"] then
         order = "h_a[logistic]-e[memory-unit]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "bob-gilded-copper-cable", amount = 3},
-          {type = "item", name = "bob-integrated-electronics", amount = 2},
-          {type = "item", name = "bob-solder", amount = 2}
+        ingredients = {
+          { type = "item", name = "bob-gilded-copper-cable", amount = 3 },
+          { type = "item", name = "bob-integrated-electronics", amount = 2 },
+          { type = "item", name = "bob-solder", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-memory-unit", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-memory-unit", amount = 1 },
         },
       },
     })
@@ -288,14 +272,12 @@ if mods["bobtech"] then
         order = "h_a[logistic]-e[memory-unit]",
         enabled = false,
         energy_required = 2,
-        ingredients =
-        {
-          {type = "item", name = "bob-integrated-electronics", amount = 4},
-          {type = "item", name = "constant-combinator", amount = 2},
+        ingredients = {
+          { type = "item", name = "bob-integrated-electronics", amount = 4 },
+          { type = "item", name = "constant-combinator", amount = 2 },
         },
-        results = 
-        {
-          {type="item", name="sct-logistic-memory-unit", amount=1},
+        results = {
+          { type = "item", name = "sct-logistic-memory-unit", amount = 1 },
         },
       },
     })

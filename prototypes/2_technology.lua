@@ -30,7 +30,7 @@ local knownpackmatchlist = {
 }
 
 for tech_name, _tech in pairs(data.raw.technology) do
---  if (not name == tech_name and (tech_name:len() < 13 or tech_name:find("sct-research", 1, true) == nil)) then
+  --  if (not name == tech_name and (tech_name:len() < 13 or tech_name:find("sct-research", 1, true) == nil)) then
   if not name == tech_name and not name == ("sct-" .. tech_name) then
     sctm.tech_remove_known_packs(tech_name, knownpackmatchlist)
   end

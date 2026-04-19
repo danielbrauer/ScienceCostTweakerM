@@ -8,13 +8,13 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/science-pack-1-128.png",
     icon_size = 128,
     essential = true,
-    effects =
-    {
---[[      {
+    effects = {
+      --[[      {
         type = "unlock-recipe",
         recipe = "automation-science-pack",
       },
-]]--
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-t1-ironcore",
@@ -24,12 +24,10 @@ data:extend({
         recipe = "sct-t1-magnet-coils",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "sct-lab-t1",
     },
-    research_trigger =
-    {
+    research_trigger = {
       type = "craft-item",
       item = "lab",
       count = 1,
@@ -45,14 +43,14 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/science-pack-2-128.png",
     icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[      
+    effects = {
+      --[[      
       {
         type = "unlock-recipe",
         recipe = "logistic-science-pack",
       },
-]]--
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-t2-instruments",
@@ -74,16 +72,13 @@ data:extend({
         recipe = "sct-t2-reaction-nodes",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "sct-lab-t2",
     },
-    unit =
-    {
+    unit = {
       count = 60,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
       },
       time = 20,
     },
@@ -98,31 +93,28 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/science-pack-3-128.png",
     icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[      
+    effects = {
+      --[[      
       {
         type = "unlock-recipe",
         recipe = "chemical-science-pack",
       },
-]]--
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-t3-atomic-sensors",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "sct-lab-t3",
-      "advanced-circuit"
+      "advanced-circuit",
     },
-    unit =
-    {
+    unit = {
       count = 90,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
       },
       time = 30,
     },
@@ -136,14 +128,14 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/military-science-pack-128.png",
     icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[      
+    effects = {
+      --[[      
       {
         type = "unlock-recipe",
         recipe = "military-science-pack",
       },
-]]--      
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-mil-subplating",
@@ -173,18 +165,15 @@ data:extend({
         recipe = "sct-waste-processing-mixed",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "advanced-circuit",
       "military-2",
     },
-    unit =
-    {
+    unit = {
       count = 60,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
       },
       time = 30,
     },
@@ -196,16 +185,16 @@ data:extend({
     type = "technology",
     name = "sct-production-science-pack",
     icon = "__ScienceCostTweakerM__/graphics/icons/production-science-pack-128.png",
-    icon_size = 128,    
+    icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[
+    effects = {
+      --[[
       {
         type = "unlock-recipe",
         recipe = "production-science-pack",
       },
-]]--
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-cyan-wire",
@@ -214,7 +203,7 @@ data:extend({
         type = "unlock-recipe",
         recipe = "sct-magenta-wire",
       },
---[[      {
+      --[[      {
         type = "unlock-recipe",
         recipe = "sct-prod-biosilicate",
       },
@@ -222,7 +211,8 @@ data:extend({
         type = "unlock-recipe",
         recipe = "sct-prod-baked-biopaste",
       },
-]]--      
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-prod-bioprocessor",
@@ -240,22 +230,19 @@ data:extend({
         recipe = "sct-waste-processing-mixed",
       },
     },
-    prerequisites =
-    {
---      "chemical-science-pack",
+    prerequisites = {
+      --      "chemical-science-pack",
       "advanced-material-processing-2",
       "processing-unit",
-      "advanced-oil-processing"
---      "sct-lab-t4",
+      "advanced-oil-processing",
+      --      "sct-lab-t4",
     },
-    unit =
-    {
+    unit = {
       count = 120,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
       },
       time = 40,
     },
@@ -270,14 +257,14 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/high-tech-science-pack-128.png",
     icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[      
+    effects = {
+      --[[      
       {
         type = "unlock-recipe",
         recipe = "utility-science-pack",
       },
-]]--      
+]]
+      --
       {
         type = "unlock-recipe",
         recipe = "sct-htech-thermalstore",
@@ -299,19 +286,16 @@ data:extend({
         recipe = "sct-waste-processing-mixed",
       },
     },
-    prerequisites =
-    {
+    prerequisites = {
       "sct-lab-t4",
       "battery",
     },
-    unit =
-    {
+    unit = {
       count = 120,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
       },
       time = 40,
     },
@@ -325,33 +309,30 @@ data:extend({
     icon = "__ScienceCostTweakerM__/graphics/icons/space-science-pack-128.png",
     icon_size = 128,
     essential = true,
-    effects = 
-    {
---[[      
+    effects = {
+      --[[      
       {
         type = "unlock-recipe",
         recipe = "satellite",
       },
-]]--      
+]]
+      --
     },
-    prerequisites =
-    {
---      "sct-lab-s",
+    prerequisites = {
+      --      "sct-lab-s",
       "rocket-silo",
       "electric-energy-accumulators",
-      "solar-energy"
+      "solar-energy",
     },
-    unit =
-    {
+    unit = {
       count = 500,
-      ingredients =
-      {
-        {"automation-science-pack", 5},
-        {"logistic-science-pack", 5},
-        {"military-science-pack",5},
-        {"chemical-science-pack", 5},
-        {"production-science-pack",5},
-        {"utility-science-pack",5},
+      ingredients = {
+        { "automation-science-pack", 5 },
+        { "logistic-science-pack", 5 },
+        { "military-science-pack", 5 },
+        { "chemical-science-pack", 5 },
+        { "production-science-pack", 5 },
+        { "utility-science-pack", 5 },
       },
       time = 60,
     },

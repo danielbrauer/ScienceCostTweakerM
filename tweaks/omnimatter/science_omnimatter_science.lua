@@ -1,6 +1,6 @@
 if mods["omnimatter_science"] and mods["omnimatter_crystal"] then
   -- science groups
-  data:extend ({
+  data:extend({
     {
       type = "item-subgroup",
       name = "sct-omni-science-pack",
@@ -10,7 +10,7 @@ if mods["omnimatter_science"] and mods["omnimatter_crystal"] then
   })
 
   -- omni pack intermediates
-  data:extend ({
+  data:extend({
     {
       type = "item",
       name = "sct-omni-pack-minerals",
@@ -41,20 +41,18 @@ if mods["omnimatter_science"] and mods["omnimatter_crystal"] then
       order = "e_a[omni]",
       enabled = false,
       energy_required = 10,
-      ingredients = 
-      {
-        { type="item", name="sct-omni-pack-tools", amount=1 },
-        { type="item", name="sct-omni-pack-minerals", amount=1 },
+      ingredients = {
+        { type = "item", name = "sct-omni-pack-tools", amount = 1 },
+        { type = "item", name = "sct-omni-pack-minerals", amount = 1 },
       },
-      results =
-      {
-        { type="item", name="omni-pack", amount=2 },
+      results = {
+        { type = "item", name = "omni-pack", amount = 2 },
       },
-    }
+    },
   })
 
   -- omnipack intermediate recipes
-  data:extend ({
+  data:extend({
     {
       type = "recipe",
       name = "sct-omni-pack-minerals",
@@ -63,14 +61,12 @@ if mods["omnimatter_science"] and mods["omnimatter_crystal"] then
       category = "crafting-with-fluid",
       enabled = false,
       energy_required = 3,
-      ingredients =
-      {
-        {type="fluid", name="omniston", amount=20},
-        {type = "item", name = "iron-ore-crystal", amount = 2},
+      ingredients = {
+        { type = "fluid", name = "omniston", amount = 20 },
+        { type = "item", name = "iron-ore-crystal", amount = 2 },
       },
-      results = 
-      {
-        {type="item", name="sct-omni-pack-minerals", amount=1},
+      results = {
+        { type = "item", name = "sct-omni-pack-minerals", amount = 1 },
       },
     },
     {
@@ -80,14 +76,12 @@ if mods["omnimatter_science"] and mods["omnimatter_crystal"] then
       order = "e_a[omni]-c[tools]",
       enabled = false,
       energy_required = 3,
-      ingredients =
-      {
-        {type = "item", name = "fast-transport-belt", amount = 2},
-        {type = "item", name = "fast-inserter", amount = 2},
+      ingredients = {
+        { type = "item", name = "fast-transport-belt", amount = 2 },
+        { type = "item", name = "fast-inserter", amount = 2 },
       },
-      results = 
-      {
-        {type="item", name="sct-omni-pack-tools", amount=1},
+      results = {
+        { type = "item", name = "sct-omni-pack-tools", amount = 1 },
       },
     },
   })

@@ -63,9 +63,8 @@ data:extend({
       { type = "item", name = "sct-lab4-construction", amount = 2 },
       { type = "item", name = "sct-lab4-manipulators", amount = 1 },
     },
-    results =
-    {
-      { type = "item", amount = 1, name="sct-lab-t4" },
+    results = {
+      { type = "item", amount = 1, name = "sct-lab-t4" },
     },
   },
 })
