@@ -14,6 +14,10 @@ if mods["angelsrefining"] then
   if data.raw.item["bob-advanced-processing-unit"] then
     sctm.recipe_ingredient_replace("sct-lab4-manipulators", "processing-unit", "bob-advanced-processing-unit")
     sctm.tech_dependency_add("sct-lab-t4", "bob-advanced-processing-unit")
-    sctm.recipe_ingredient_replace("sct-htech-injector", "processing-unit", { type = "item", name = "bob-advanced-processing-unit", amount = 1 })
+    sctm.recipe_ingredient_replace(
+      "sct-htech-injector",
+      "processing-unit",
+      { type = "item", name = "bob-advanced-processing-unit", amount = 1 }
+    )
   end
 end
