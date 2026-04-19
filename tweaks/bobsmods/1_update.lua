@@ -1,7 +1,6 @@
 if mods["bobelectronics"] or mods["boblogistics"] or mods["bobplates"] then
   sctm.recipe_ingredient_remove("sct-t3-flash-fuel", "petroleum-gas")
-  sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "heavy-oil", amount = 10 }
-  )
+  sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "heavy-oil", amount = 10 })
   sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "light-oil", amount = 10 })
   sctm.tech_dependency_remove("sct-production-science-pack", "advanced-oil-processing")
 end
@@ -321,7 +320,7 @@ if mods["bobtech"] then
     end
     data.raw.lab["sct-lab-t4"].next_upgrade = "bob-lab-2"
     data.raw.lab["lab"].next_upgrade = "sct-lab-t2"
-    
+
     -- Update lab energy usage
     data.raw.lab["bob-lab-2"].energy_usage = "10MW"
 
