@@ -176,8 +176,8 @@ if mods["bobplates"] then
   end
 
   if data.raw.item["bob-tinned-copper-cable"] then
-    sctm.recipe_ingredient_replace("sct-wire-cyan", "copper-cable", "bob-tinned-copper-cable")
-    sctm.recipe_ingredient_replace("sct-wire-magenta", "copper-cable", "bob-tinned-copper-cable")
+    sctm.recipe_ingredient_replace("sct-cyan-wire", "copper-cable", "bob-tinned-copper-cable")
+    sctm.recipe_ingredient_replace("sct-magenta-wire", "copper-cable", "bob-tinned-copper-cable")
   end
 
   -- High-Tech Science Pack:
