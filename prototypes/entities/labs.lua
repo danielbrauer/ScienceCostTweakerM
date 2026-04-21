@@ -300,9 +300,3 @@ if settings.startup["sct-lab-modules"].value == "tier3" then
 elseif settings.startup["sct-lab-modules"].value == "tier4" then
   data.raw.lab["sct-lab-t4"].module_slots = 2
 end
-
-if settings.startup["sct-lab-scaling"].value == true then
-  data.raw.lab["sct-lab-t2"].researching_speed = 1.1
-  data.raw.lab["sct-lab-t3"].researching_speed = 1.3
-  data.raw.lab["sct-lab-t4"].researching_speed = 1.5
-end

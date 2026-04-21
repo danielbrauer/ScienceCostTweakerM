@@ -9,14 +9,6 @@ data:extend({
   },
 
   {
-    type = "bool-setting",
-    name = "sct-lab-scaling",
-    order = "sct-d[scaling]",
-    setting_type = "startup",
-    default_value = false,
-  },
-
-  {
     type = "string-setting",
     name = "sct-lab-modules",
     order = "sct-f[modules]",

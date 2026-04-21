@@ -313,11 +313,7 @@ if mods["bobtech"] then
     data.raw.recipe["bob-lab-2"].order = "b[labs]-e[lab5]"
     sctm.recipe_ingredient_replace("bob-lab-2", "lab", "sct-lab-t4")
     sctm.lab_input_remove("sct-lab-t4", "space-science-pack")
-    if settings.startup["sct-lab-scaling"].value == true then
-      data.raw.lab["bob-lab-2"].researching_speed = 2
-    else
-      data.raw.lab["bob-lab-2"].researching_speed = 1
-    end
+    data.raw.lab["bob-lab-2"].researching_speed = 1
     data.raw.lab["sct-lab-t4"].next_upgrade = "bob-lab-2"
     data.raw.lab["lab"].next_upgrade = "sct-lab-t2"
 
