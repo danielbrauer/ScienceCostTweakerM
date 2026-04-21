@@ -281,10 +281,6 @@ data:extend({
         type = "unlock-recipe",
         recipe = "sct-htech-random",
       },
-      {
-        type = "unlock-recipe",
-        recipe = "sct-waste-processing-mixed",
-      },
     },
     prerequisites = {
       "sct-lab-t4",
@@ -296,6 +292,7 @@ data:extend({
         { "automation-science-pack", 1 },
         { "logistic-science-pack", 1 },
         { "chemical-science-pack", 1 },
+        { "production-science-pack", 1 },
       },
       time = 40,
     },

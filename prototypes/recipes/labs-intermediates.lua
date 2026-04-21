@@ -111,6 +111,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "centrifuge", amount = 1 },
       { type = "item", name = "low-density-structure", amount = 10 },
+      { type = "item", name = "express-underground-belt", amount = 2 },
     },
     results = {
       { type = "item", name = "sct-lab4-construction", amount = 1 },

@@ -194,7 +194,9 @@ data:extend({
       "processing-unit",
       "uranium-processing",
       "bulk-inserter",
+      "logistics-3",
       "low-density-structure",
+      "production-science-pack",
     },
     unit = {
       count = 60,
@@ -202,6 +204,7 @@ data:extend({
         { "automation-science-pack", 1 },
         { "logistic-science-pack", 1 },
         { "chemical-science-pack", 1 },
+        { "production-science-pack", 1 },
       },
       time = 40,
     },

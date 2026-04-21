@@ -7,10 +7,6 @@ if mods["angelsbioprocessing"] then
 end
 
 if mods["angelsrefining"] then
-  sctm.tech_pack_add("sct-lab-t4", { "production-science-pack", 1 })
-  sctm.tech_pack_add("sct-utility-science-pack", { "production-science-pack", 1 })
-  sctm.tech_unlock_remove("sct-utility-science-pack", "sct-waste-processing-mixed")
-
   if data.raw.item["bob-advanced-processing-unit"] then
     sctm.recipe_ingredient_replace("sct-lab4-manipulators", "processing-unit", "bob-advanced-processing-unit")
     sctm.tech_dependency_add("sct-lab-t4", "bob-advanced-processing-unit")

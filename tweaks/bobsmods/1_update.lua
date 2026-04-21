@@ -445,6 +445,9 @@ if mods["boblogistics"] then
   then
     sctm.recipe_ingredient_replace("sct-lab1-mechanization", "transport-belt", "bob-basic-transport-belt")
   end
+  sctm.recipe_ingredient_replace("sct-lab4-construction", "express-underground-belt", "bob-turbo-underground-belt")
+  sctm.tech_dependency_remove("sct-lab-t4", "logistics-3")
+  sctm.tech_dependency_add("sct-lab-t4", "logistics-4")
 end
 
 if mods["bobrevamp"] then
