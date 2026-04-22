@@ -101,7 +101,7 @@ if mods["omnimatter_energy"] then
       },
       time = 20,
     }
-    
+
     tech = data.raw.technology["sct-lab-t1"]
     tech.research_trigger = nil
     tech.unit = {
