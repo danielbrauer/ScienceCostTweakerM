@@ -189,7 +189,7 @@ if mods["bobplates"] then
     sctm.recipe_ingredient_replace("sct-magenta-wire", "copper-cable", "bob-tinned-copper-cable")
   end
 
-  -- High-Tech Science Pack:
+  -- Utility Science Pack:
   -- =============================
 
   if

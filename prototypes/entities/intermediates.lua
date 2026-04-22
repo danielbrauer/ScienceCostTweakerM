@@ -272,7 +272,7 @@ data:extend({
     stack_size = 200,
   },
 
-  -- High-Tech Intermediary products.
+  -- Utility Intermediary products.
   -- =============================
 
   -- Energy Bank

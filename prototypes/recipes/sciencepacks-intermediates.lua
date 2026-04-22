@@ -502,7 +502,7 @@ data:extend({
     main_product = "sct-prod-chipcase",
   },
 
-  -- High-Tech Intermediary products.
+  -- Utility Intermediary products.
   -- =============================
 
   {

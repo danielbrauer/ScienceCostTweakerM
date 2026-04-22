@@ -62,7 +62,7 @@ data.raw.tool["production-science-pack"].icons = {
 data.raw.tool["production-science-pack"].icon = nil
 data.raw.tool["utility-science-pack"].icons = {
   {
-    icon = "__ScienceCostTweakerM__/graphics/icons/high-tech-science-pack-64.png",
+    icon = "__ScienceCostTweakerM__/graphics/icons/utility-science-pack-64.png",
     icon_size = 64,
   },
 }

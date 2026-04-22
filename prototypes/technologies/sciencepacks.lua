@@ -255,7 +255,7 @@ data:extend({
   {
     type = "technology",
     name = "sct-utility-science-pack",
-    icon = "__ScienceCostTweakerM__/graphics/icons/high-tech-science-pack-128.png",
+    icon = "__ScienceCostTweakerM__/graphics/icons/utility-science-pack-128.png",
     icon_size = 128,
     essential = true,
     effects = {
