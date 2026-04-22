@@ -1,11 +1,57 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: ???
+  Changes:
+    - Updated for Factorio 2.0 #98
+    - Changed T3 labs to use Chemical plants instead of Solar panels #99
+---------------------------------------------------------------------------------------------------
+Version: 1.2.4
+Date: 01.01.2024
+  Bugfixes:
+    - Fixed migration issue #95
+---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+Date: 22.12.2023
+  Changes:
+    - Added prefix to science pack names to make them easily searchable #92
+    - Compatibility with latest Bob's changes #93
+    - Compatibility with latest Angel's changes #94
+  Bugfixes:
+    - Fixed duplicate Purple Science recipe with Bio Industries mod #45
+---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+Date: 3.11.2023
+  Bugfixes:
+    - removed #89
+    - added soft dependency on bob plates (load order)
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 3.11.2023
+  Changes:
+    - added minimal compatibility with omnimatter energy mod #90 (@CerealSam)
+    - Updated compatibility with Bob's mods #89 (@kiwihawk)
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 10.9.2023
+  Changes:
+    - Simplified recipe for Sulfur lightsource #88
+    - Removed Sulfur lightsource from Blue science recipe #88
+    - Added Wire Shortcuts mod compatibility #85
+    - Removed Py mods compatibility #53
+  Bugfixes:
+    - Fix bobs lab-2 icon #76
+    - Fixed blue science not being craftable with vanilla #79
+    - Fixed compatibility with AAI Industries #57 #72 #74 #81
+    - Fixed compatibility with Angel's mods #84
+    - Fixed compatibility with Bob's mods #76 #77 #78 #83 #87
+---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 25.6.2021
   Changes:
     - replaced cobalt with brass in t3 lab when angel smelting loaded (upcoming angels change)
     - removed legacy sp dependency from labs
   Bugfixes:
-    - fixed science pack connection algorithm (should now do only meaningfull connection)
+    - fixed science pack connection algorithm (should now do only meaningful connection)
     - fixed missing dependency check for bobtech in alienlab tech
     - fixed flash fuel recipe hiding (petroleum variant only when not heavy oil)
 ---------------------------------------------------------------------------------------------------
