@@ -293,8 +293,8 @@ if mods["bobtech"] then
         icon_size = 64,
       },
       {
-        icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
-        icon_size = 64,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/5.png",
+        icon_size = 32,
       },
     }
     data.raw.item["bob-lab-2"].icon = nil
@@ -304,8 +304,8 @@ if mods["bobtech"] then
         icon = "__ScienceCostTweakerM__/graphics/bobmods/lab2-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/5.png",
       },
     }
     data.raw.lab["bob-lab-2"].icon = nil
@@ -344,8 +344,8 @@ if mods["bobtech"] then
         icon = "__ScienceCostTweakerM__/graphics/bobmods/alien-lab-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/alien-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/alien.png",
       },
     }
     data.raw.item["bob-lab-alien"].icon = nil
@@ -355,8 +355,8 @@ if mods["bobtech"] then
         icon = "__ScienceCostTweakerM__/graphics/bobmods/alien-lab-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/alien-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/alien.png",
       },
     }
     data.raw.lab["bob-lab-alien"].icon = nil

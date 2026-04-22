@@ -497,8 +497,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/icons/sct-t3-sulfur-lightsource-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/3-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/3.png",
       },
     },
     subgroup = "sct-labparts",

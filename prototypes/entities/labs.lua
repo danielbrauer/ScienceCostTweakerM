@@ -12,8 +12,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t2/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/2-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/2.png",
       },
     },
     subgroup = "sct-labs",
@@ -30,8 +30,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t2/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/2-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/2.png",
       },
     },
     flags = { "placeable-player", "player-creation" },
@@ -89,8 +89,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t3/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/3-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/3.png",
       },
     },
     subgroup = "sct-labs",
@@ -107,8 +107,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t3/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/3-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/3.png",
       },
     },
     flags = { "placeable-player", "player-creation" },
@@ -170,8 +170,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t4/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/4-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/4.png",
       },
     },
     subgroup = "sct-labs",
@@ -188,8 +188,8 @@ data:extend({
         icon = "__ScienceCostTweakerM__/graphics/sct-lab-t4/icon-64.png",
       },
       {
-        icon_size = 64,
-        icon = "__ScienceCostTweakerM__/graphics/overlays/4-64.png",
+        icon_size = 32,
+        icon = "__ScienceCostTweakerM__/graphics/overlays/4.png",
       },
     },
     flags = { "placeable-player", "player-creation" },
@@ -251,8 +251,8 @@ data.raw.item["lab"].icons = {
     icon = "__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png",
   },
   {
-    icon_size = 64,
-    icon = "__ScienceCostTweakerM__/graphics/overlays/1-64.png",
+    icon_size = 32,
+    icon = "__ScienceCostTweakerM__/graphics/overlays/1.png",
   },
 }
 data.raw.item["lab"].icon = nil
@@ -263,8 +263,8 @@ data.raw.lab["lab"].icons = {
     icon = "__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png",
   },
   {
-    icon_size = 64,
-    icon = "__ScienceCostTweakerM__/graphics/overlays/1-64.png",
+    icon_size = 32,
+    icon = "__ScienceCostTweakerM__/graphics/overlays/1.png",
   },
 }
 data.raw.lab["lab"].icon = nil
