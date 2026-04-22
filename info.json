@@ -14,8 +14,7 @@
     "? bobplates",
     "? aai-industry",
     "? omnimatter_energy",
-    "(?) bobgreenhouse",
-    "(?) Bio_Industries"],
+    "(?) bobgreenhouse"],
   "contact": "mexmer@github.com",
   "homepage": "https://github.com/mexmer/ScienceCostTweakerM",
   "description": "Allows the cost of research to be tweaked, in terms of count, science packs and time. Original mod made by UberWafe, adopted for Factorio 0.18+"
