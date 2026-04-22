@@ -40,7 +40,7 @@ if mods["aai-industry"] then
       name = "sct-t0-crate",
       subgroup = "sct-science-pack-0",
       order = "d[t0]-b[crate]",
-      enabled = true,
+      enabled = false,
       energy_required = 1,
       ingredients = {
         { type = "item", name = "stone", amount = 2 },
@@ -55,7 +55,7 @@ if mods["aai-industry"] then
       name = "sct-t0-solvent",
       subgroup = "sct-science-pack-0",
       order = "d[t0]-c[solvent]",
-      enabled = true,
+      enabled = false,
       energy_required = 1,
       ingredients = {
         { type = "item", name = "iron-ore", amount = 2 },
@@ -92,7 +92,7 @@ if mods["aai-industry"] then
       name = "sct-science-pack-0",
       subgroup = "sct-science-pack-0",
       order = "d[t0]-a[pack]",
-      enabled = true,
+      enabled = false,
       always_show_made_in = true,
       energy_required = 3,
       ingredients = {
