@@ -167,6 +167,7 @@ data:extend({
     },
     prerequisites = {
       "advanced-circuit",
+      "explosives",
       "military-2",
     },
     unit = {

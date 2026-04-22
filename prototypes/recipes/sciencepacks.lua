@@ -105,6 +105,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "sct-mil-circuit3", amount = 1 },
       { type = "item", name = "sct-mil-plating", amount = 1 },
+      { type = "item", name = "explosives", amount = 1 },
     },
     results = {
       { type = "item", amount = 2, name = "military-science-pack" },
