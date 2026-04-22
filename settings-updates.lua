@@ -18,4 +18,6 @@ local function overwrite_setting(setting_type, setting_name, value)
   end
 end
 
-overwrite_setting("bool-setting", "bobmods-burnerphase", false)
+if mods["bobtech"] then
+  overwrite_setting("bool-setting", "bobmods-burnerphase", false)
+end
