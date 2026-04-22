@@ -130,6 +130,7 @@ if mods["angelsbioprocessing"] then
     {
       type = "technology",
       name = "sct-bio-science-pack",
+      essential = true,
       icon = "__ScienceCostTweakerM__/graphics/angelsmods/sct-bio-science-pack-128.png",
       icon_size = 128,
       effects = {
@@ -151,6 +152,7 @@ if mods["angelsbioprocessing"] then
         },
       },
       prerequisites = {
+        "angels-composting",
         "angels-gardens",
         "angels-bio-paper-1",
       },

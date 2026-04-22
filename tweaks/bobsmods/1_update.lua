@@ -1,3 +1,13 @@
+if data.raw.item["bob-advanced-processing-unit"] then
+  sctm.recipe_ingredient_replace("sct-lab4-manipulators", "processing-unit", "bob-advanced-processing-unit")
+  sctm.tech_dependency_add("sct-lab-t4", "bob-advanced-processing-unit")
+  sctm.recipe_ingredient_replace(
+    "sct-htech-injector",
+    "processing-unit",
+    { type = "item", name = "bob-advanced-processing-unit", amount = 1 }
+  )
+end
+
 if mods["bobelectronics"] or mods["boblogistics"] or mods["bobplates"] then
   sctm.recipe_ingredient_remove("sct-t3-flash-fuel", "petroleum-gas")
   sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "heavy-oil", amount = 10 })
@@ -146,7 +156,7 @@ if mods["bobplates"] then
     end
   end
 
-  if data.raw.item["bob-carbon"] then
+  if data.raw.item["bob-carbon"] and not mods["angelspetrochem"] then
     sctm.recipe_ingredient_add("sct-mil-circuit3", { type = "item", name = "bob-carbon", amount = 4 })
     sctm.recipe_ingredient_add("sct-mil-circuit2", { type = "item", name = "bob-carbon", amount = 3 })
     sctm.recipe_ingredient_replace("sct-mil-circuit1", "coal", { type = "item", name = "bob-carbon", amount = 0 })
@@ -271,10 +281,6 @@ if mods["bobelectronics"] then
     sctm.recipe_ingredient_replace("sct-htech-capbank", "copper-cable", "bob-insulated-cable")
     sctm.recipe_ingredient_replace("sct-htech-injector", "copper-cable", "bob-insulated-cable")
   end
-end
-
-if data.raw.item["angels-chemical-plant-2"] then
-  sctm.recipe_ingredient_replace("sct-lab3-construction", "chemical-plant", "angels-chemical-plant-2")
 end
 
 -- add bob logistic pack if found

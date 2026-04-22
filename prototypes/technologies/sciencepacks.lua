@@ -340,7 +340,3 @@ data:extend({
 
 sctm.tech_unlock_add("advanced-material-processing-2", "sct-prod-baked-biopaste")
 sctm.tech_unlock_add("advanced-material-processing-2", "sct-prod-biosilicate")
-
-if mods["angelspetrochem"] then
-  sctm.tech_dependency_add("advanced-material-processing-2", "angels-gas-processing")
-end
