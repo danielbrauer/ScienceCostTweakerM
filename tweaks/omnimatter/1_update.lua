@@ -85,30 +85,46 @@ if mods["omnimatter_energy"] then
     --sctm.log(serpent.block(deps))
     if deps and #deps then
       for _, prereq in pairs(deps) do
-        sctm.tech_dependency_add("sct-automation-science-pack", prereq)
+        sctm.tech_dependency_add("automation-science-pack", prereq)
       end
     end
   end
 
   --Add omnis energy SP to SCT lab and automation SP techs
   if data.raw.tool["energy-science-pack"] and not data.raw.tool["sct-science-pack-0"] then
-    data.raw.technology["sct-automation-science-pack"].unit.time = 20
-    data.raw.technology["sct-automation-science-pack"].unit.count = 45
-    sctm.tech_pack_add("sct-automation-science-pack", { "energy-science-pack", 1 })
+    local tech = data.raw.technology["automation-science-pack"]
+    tech.research_trigger = nil
+    tech.unit = {
+      count = 45,
+      ingredients = {
+        { "energy-science-pack", 1 },
+      },
+      time = 20,
+    }
+    
+    tech = data.raw.technology["sct-lab-t1"]
+    tech.research_trigger = nil
+    tech.unit = {
+      count = 40,
+      ingredients = {
+        { "energy-science-pack", 1 },
+      },
+      time = 20,
+    }
     data.raw.technology["sct-lab-t1"].unit.time = 20
     data.raw.technology["sct-lab-t1"].unit.count = 40
-    sctm.tech_pack_add("sct-lab-t1", { "energy-science-pack", 1 })
   end
 
   --Readd the automation SP tech to steam power, the electric omnitractor and omnium power 1
-  sctm.tech_dependency_add("steam-power", "sct-automation-science-pack")
-  sctm.tech_dependency_add("omnitech-omnitractor-electric-1", "sct-automation-science-pack")
-  sctm.tech_dependency_add("omnitech-omnium-power-1", "sct-automation-science-pack")
+  sctm.tech_dependency_remove("sct-lab-t1", "steam-power")
+  sctm.tech_dependency_add("steam-power", "automation-science-pack")
+  sctm.tech_dependency_add("omnitech-omnitractor-electric-1", "automation-science-pack")
+  sctm.tech_dependency_add("omnitech-omnium-power-1", "automation-science-pack")
 
   --Remove the automation SP from military and stone-wall tech again
-  sctm.tech_dependency_remove("military", "sct-automation-science-pack")
-  sctm.tech_dependency_remove("stone-wall", "sct-automation-science-pack")
-  sctm.tech_dependency_remove("gun-turret", "sct-automation-science-pack")
+  sctm.tech_dependency_remove("military", "automation-science-pack")
+  sctm.tech_dependency_remove("stone-wall", "automation-science-pack")
+  sctm.tech_dependency_remove("gun-turret", "automation-science-pack")
 
   --Update SCT lab inputs
   sctm.lab_input_add("lab", "energy-science-pack")
