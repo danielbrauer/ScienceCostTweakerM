@@ -3,7 +3,11 @@ if mods["angelspetrochem"] then
   -- =============================
   sctm.recipe_ingredient_add("sct-mil-circuit3", { type = "item", name = "angels-solid-carbon", amount = 4 })
   sctm.recipe_ingredient_add("sct-mil-circuit2", { type = "item", name = "angels-solid-carbon", amount = 3 })
-  sctm.recipe_ingredient_replace("sct-mil-circuit1", "coal", { type = "item", name = "angels-solid-carbon", amount = 0 })
+  sctm.recipe_ingredient_replace(
+    "sct-mil-circuit1",
+    "coal",
+    { type = "item", name = "angels-solid-carbon", amount = 0 }
+  )
 
   -- Blue Science Pack:
   -- =============================
@@ -13,7 +17,7 @@ if mods["angelspetrochem"] then
   sctm.recipe_ingredient_remove("sct-t3-flash-fuel", "angels-gas-methane")
   sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "angels-liquid-naphtha", amount = 10 })
   sctm.recipe_ingredient_add("sct-t3-flash-fuel", { type = "fluid", name = "angels-liquid-fuel-oil", amount = 10 })
-  
+
   sctm.recipe_ingredient_replace("sct-lab3-construction", "chemical-plant", "angels-chemical-plant-2")
   sctm.tech_dependency_add("sct-lab-t3", "angels-advanced-chemistry-1")
 
